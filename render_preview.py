@@ -17,7 +17,7 @@ def execute_silently(command: str, ignore_codes: list[int] = []) -> int:
 def render_preview(
     filename: str,
     margins=2,
-    density=10000,
+    density=5000,
     scale=0.25,
     transparent=True,
     max_aspect_ratio: Union[float, None] = None,
@@ -31,19 +31,19 @@ def render_preview(
     )
     transparency_option = "" if transparent else "-alpha off"
     execute_silently(
-        f"magick convert {transparency_option} -density {density} {cropped_pdf_filename}  -scale {scale * 100}% {preview_filename}",
+        f"convert {transparency_option} -density {density} {cropped_pdf_filename} -scale {scale * 100}% {preview_filename}",
         ignore_codes=[1],
     )
 
     if max_aspect_ratio:
         height = None
         width = None
-        with Image.open("preview.png") as preview_image:
+        with Image.open(preview_filename) as preview_image:
             height = preview_image.height
             width = preview_image.width
         if width / height > max_aspect_ratio:
             execute_silently(
-                f"magick convert {preview_filename} -background white -thumbnail {width}x{int(width / max_aspect_ratio)}> -gravity center -extent {width}x{int(width / max_aspect_ratio)} {preview_filename}",
+                f"convert {preview_filename} -background white -thumbnail {width}x{int(width / max_aspect_ratio)}> -gravity center -extent {width}x{int(width / max_aspect_ratio)} {preview_filename}",
                 ignore_codes=[1],
             )
 

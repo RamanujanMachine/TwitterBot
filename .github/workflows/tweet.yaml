@@ -1,0 +1,33 @@
+name: Daily Tweet
+
+on:
+    schedule:
+        - cron: "0 8 * * *"
+
+jobs:
+    tweet:
+        name: Tweet
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the repository
+              uses: actions/checkout@v2
+            - name: Setup Python
+              uses: actions/setup-python@v2
+              with:
+                  python-version: "3.10"
+            - name: Install Tweepy and Pillow
+              run: pip install --user tweepy pillow
+            - name: Install LaTeX and ImageMagick
+              run: sudo apt-get -y install texlive texlive-extra-utils texlive-latex-extra imagemagick
+            - name: Fix ImageMagick Policy
+              run: |
+                  sudo sed -i 's/rights="none" pattern="{PS,PDF,XPS}"/rights="read | write" pattern="{PS,PDF,XPS}"/' /etc/ImageMagick-6/policy.xml
+                  sudo cat /etc/ImageMagick-6/policy.xml
+            - name: Run Script
+              run: python3 bot.py
+            - name: Update Repository
+              run: |
+                  git config --global user.name 'Actions Bot'
+                  git config --global user.email 'action@github.com'
+                  git commit -am "Automated report"
+                  git push
