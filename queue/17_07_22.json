@@ -1,4 +1,4 @@
 {
-    "equation": "E = mc^2",
+    "tex": "\\documentclass[preview,border=2pt]{standalone}\n\\usepackage{amsmath}\n\\begin{document}\n\\begin{center}\nUsing the series\n\\end{center}\n\\begin{equation*}\na_n=n^2+(n+1)^2+56\n\\end{equation*}\n\\begin{equation*}\nb_n=-n^4\n\\end{equation*}\n\\begin{center}\nWe got the conjecture:\n\\end{center}\n\\begin{equation*}\n\\frac{-29400}{-48877+4900\\cdot \\pi ^2}=57+\\frac{-1}{61+\\frac{-16}{69+\\frac{-11}{81+\\cdots}}}\n\\end{equation*}\n\\end{document}",
     "type": "conjecture"
 }

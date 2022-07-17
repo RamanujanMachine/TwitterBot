@@ -18,7 +18,7 @@ def render_preview(
     filename: str,
     margins=2,
     density=10000,
-    scale=1,
+    scale=0.25,
     transparent=True,
     max_aspect_ratio: Union[float, None] = None,
     pdf_filename="preview",

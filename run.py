@@ -4,7 +4,7 @@ from datetime import datetime
 import argparse
 import tweepy
 import json
-from render_preview import render_equation
+from render_preview import render_preview
 
 BODY_MAP = {
     "conjecture": "Can you prove today's conjecture?",
@@ -31,7 +31,9 @@ with open(filename, "r") as tweet_file:
     tweet_info = json.load(tweet_file)
 
 body = BODY_MAP[tweet_info["type"]]
-render_equation(tweet_info["equation"], transparent=False, max_aspect_ratio=16 / 9)
+with open("tmp.tex", "w") as tmp_tex_file:
+    tmp_tex_file.write(tweet_info["tex"])
+render_preview("tmp.tex", transparent=False, max_aspect_ratio=16 / 9)
 
 if not args.dont_tweet:
     # TODO: Move these to repository secrets
