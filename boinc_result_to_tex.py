@@ -1,18 +1,23 @@
-"""Converts the different BOINC result schemas to fancy LaTeX documents."""
+"""Converts the different BOINC result schemas to fancy TeX documents."""
 import json
+import os
 from sympy import symbols, latex
 
 conjecture_template = r"""\documentclass[preview,border=2pt]{standalone}
 \usepackage{amsmath}
 \begin{document}
+\begin{center}
 Using the series
+\end{center}
 \begin{equation*}
 a_n=AnEquation
 \end{equation*}
 \begin{equation*}
 b_n=BnEquation
 \end{equation*}
+\begin{center}
 We got the conjecture:
+\end{center}
 \begin{equation*}
 LHSEquation=RHSEquation
 \end{equation*}
@@ -61,8 +66,38 @@ def generate_rhs(an_equation: str, bn_equation: str, steps=2) -> str:
     return rhs_equation
 
 
+def coefficient_to_tex(coefficient: int, term: str, add_dot=True):
+    if coefficient == 0:
+        return ""
+    if coefficient == 1:
+        return term
+    dot_str = r"\cdot" if add_dot else ""
+    return f"{coefficient} {dot_str} {term}"
+
+
+def plus_coefficient_to_tex(coefficient: int, term: str, add_dot=True):
+    return ("+" if coefficient > 0 else "") + coefficient_to_tex(
+        coefficient, term, add_dot
+    )
+
+
+def create_consts_sum_tex(coefficients: list[int], consts: list[str]) -> str:
+    assert len(coefficients) == len(consts)
+    result = coefficient_to_tex(coefficients[0], consts[0], add_dot=False)
+    for i in range(1, len(coefficients)):
+        result += plus_coefficient_to_tex(coefficients[i], consts[i], add_dot=False)
+    return result
+
+
+def fraction(numerator: str, denominator: str) -> str:
+    return rf"\frac{{{numerator}}}{{{denominator}}}"
+
+
 def handle_general(result_data):
-    # The two first lists are in the same format, e.g. [4, 6, 102, 50] -> 50 + 102n + 6n^2 + 4n^3.
+    assert len(result_data[3]) == 3
+    assert len(result_data[4]) == 3
+
+    # The two first lists are in the same format so they should be treated the same
     an_bn_equations = []
     for i in range(2):
         polynomial = 0
@@ -71,45 +106,48 @@ def handle_general(result_data):
         an_bn_equations.append(latex(polynomial))
     an_equation, bn_equation = an_bn_equations
 
-    return an_equation, bn_equation, ""
+    consts = ["", r"\zeta (3)", r"\zeta (2)"]
+    lhs_numerator = create_consts_sum_tex(result_data[3], consts)
+    lhs_denominator = create_consts_sum_tex(result_data[4], consts)
+    lhs_equation = fraction(lhs_numerator, lhs_denominator)
 
-
-def coefficient_to_latex(coefficient: int, term: str):
-    if coefficient == 0:
-        return ""
-    if coefficient == 1:
-        return term
-    return rf"{coefficient} \cdot {term}"
-
-
-def plus_coefficient_to_latex(coefficient: int, term: str):
-    return ("+" if coefficient > 0 else "") + coefficient_to_latex(coefficient, term)
+    return an_equation, bn_equation, lhs_equation
 
 
 def handle_zeta5(result_data):
+    assert len(result_data[0]) == 3
+    assert len(result_data[1]) == 1
+    assert len(result_data[3]) == 3
+    assert len(result_data[4]) == 3
+
+    an_equation = (
+        coefficient_to_tex(result_data[0][0], "(n^5 + (n + 1)^5)")
+        + plus_coefficient_to_tex(result_data[0][1], "(n^3 + (n + 1)^3)")
+        + plus_coefficient_to_tex(result_data[0][2], "(2n + 1)")
+    )
+    bn_equation = coefficient_to_tex(-(result_data[1][0] ** 2), "n^{10}")
+
+    consts = ["", r"\zeta (3)", r"\zeta (5)"]
+    lhs_numerator = create_consts_sum_tex(result_data[3], consts)
+    lhs_denominator = create_consts_sum_tex(result_data[4], consts)
+    lhs_equation = fraction(lhs_numerator, lhs_denominator)
+
     return (
-        coefficient_to_latex(result_data[0][0], "(n^5 + (n + 1)^5)")
-        + plus_coefficient_to_latex(result_data[0][1], "(n^3 + (n + 1)^3)")
-        + plus_coefficient_to_latex(result_data[0][2], "(2n + 1)"),
-        coefficient_to_latex(-(result_data[1][0] ** 2), "n^{10}"),
-        "",
+        an_equation,
+        bn_equation,
+        lhs_equation,
     )
 
 
 HANDLERS = {"general": handle_general, "zeta5": handle_zeta5}
 
-if __name__ == "__main__":
-    from argparse import ArgumentParser
 
-    parser = ArgumentParser()
-    parser.add_argument("file")
-    args = parser.parse_args()
-
+def generate_tex(result_filename: str):
     result_data = None
-    with open(args.file, "r") as result_file:
+    with open(result_filename, "r") as result_file:
         result_data = json.load(result_file)[0]
 
-    result_type = args.file.split("_")[1]
+    result_type = os.path.basename(result_filename).split("_")[1]
     if result_type in HANDLERS:
         an_equation, bn_equation, lhs_equation = HANDLERS[result_type](result_data)
         an_equation = an_equation.removeprefix("+")
@@ -124,3 +162,13 @@ if __name__ == "__main__":
             f"Unsupported result type '{result_type}'\nThe supported types are: {', '.join(HANDLERS.keys())}"
         )
         exit(-1)
+
+
+if __name__ == "__main__":
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser()
+    parser.add_argument("file")
+    args = parser.parse_args()
+
+    generate_tex(args.file)

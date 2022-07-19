@@ -20,14 +20,17 @@ jobs:
             - name: Install LaTeX and ImageMagick
               run: sudo apt-get -y install texlive texlive-extra-utils texlive-latex-extra imagemagick
             - name: Fix ImageMagick Policy
-              run: |
-                  sudo sed -i 's/rights="none" pattern="{PS,PDF,XPS}"/rights="read | write" pattern="{PS,PDF,XPS}"/' /etc/ImageMagick-6/policy.xml
-                  sudo cat /etc/ImageMagick-6/policy.xml
+              run: sudo sed -i 's/rights="none" pattern="PDF"/rights="read | write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
             - name: Run Script
               run: python3 bot.py
+              env:
+                  CONSUMER_TOKEN: ${{ secrets.CONSUMER_TOKEN }}
+                  CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+                  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+                  ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
             - name: Update Repository
               run: |
                   git config --global user.name 'Actions Bot'
                   git config --global user.email 'action@github.com'
-                  git commit -am "Automated report"
+                  git commit -am "Automated post-tweet update"
                   git push

@@ -20,6 +20,7 @@ args = parser.parse_args()
 filename = args.file
 if not filename:
     queue_files = sorted(os.listdir("queue"))
+    queue_files.remove(".gitkeep")
     if len(queue_files) == 0:
         print("No tweets available in queue!")
         exit(-1)
@@ -36,12 +37,11 @@ with open("tmp.tex", "w") as tmp_tex_file:
 render_preview("tmp.tex", transparent=False, max_aspect_ratio=16 / 9)
 
 if not args.dont_tweet:
-    # TODO: Move these to repository secrets
     auth = tweepy.OAuth1UserHandler(
-        "",
-        "",
-        "",
-        "",
+        os.environ["CONSUMER_TOKEN"],
+        os.environ["CONSUMER_SECRET"],
+        os.environ["ACCESS_TOKEN"],
+        os.environ["ACCESS_TOKEN_SECRET"],
     )
 
     api = tweepy.API(auth)

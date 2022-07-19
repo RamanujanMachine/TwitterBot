@@ -17,8 +17,8 @@ def execute_silently(command: str, ignore_codes: list[int] = []) -> int:
 def render_preview(
     filename: str,
     margins=2,
-    density=5000,
-    scale=0.25,
+    density=2000,
+    scale=1,
     transparent=True,
     max_aspect_ratio: Union[float, None] = None,
     pdf_filename="preview",
