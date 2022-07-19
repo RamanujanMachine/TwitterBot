@@ -90,6 +90,8 @@ def create_consts_sum_tex(coefficients: list[int], consts: list[str]) -> str:
 
 
 def fraction(numerator: str, denominator: str) -> str:
+    numerator.removeprefix("+")
+    denominator.removeprefix("+")
     return rf"\frac{{{numerator}}}{{{denominator}}}"
 
 
