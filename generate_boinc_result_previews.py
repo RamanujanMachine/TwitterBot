@@ -7,12 +7,15 @@ if __name__ == "__main__":
     for f in os.listdir("boinc_results"):
         if not f.startswith("RNM") or os.path.splitext(f)[1] != "":
             continue
-        print("Generating TeX for " + f)
-        try:
-            generate_tex(os.path.join("boinc_results", f))
-        except:
-            print("Failed!")
+        if "zeta4" in f:
             continue
-        print("Rendering PNG for " + f)
+        # print("Generating TeX for " + f)
+        try:
+            with open("result.tex", "w") as result_file:
+                result_file.write(generate_tex(os.path.join("boinc_results", f)))
+        except:
+            print("Failed! " + f)
+            continue
+        # print("Rendering PNG for " + f)
         render_preview("result.tex")
         shutil.move("preview.png", os.path.join("boinc_results", f + ".png"))
