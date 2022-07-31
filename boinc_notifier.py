@@ -1,12 +1,17 @@
-"""A short script to notify the Ramanujan Machine team about new results from BOINC"""
+"""
+A short script to notify the Ramanujan Machine team about new results from BOINC
+WARNING: the script assumes the user uses Outlook. Gmail no longer supports this simple authentication method.
+"""
 
-from get_boinc_results import get_available_results, get_webpage
+from datetime import datetime
+from get_boinc_results import get_webpage
 
 
 if __name__ == "__main__":
     import json
     import os
     import shutil
+    import smtplib
     from boinc_result_to_tex import generate_tex
     from render_preview import render_preview
 
@@ -36,6 +41,36 @@ if __name__ == "__main__":
             shutil.move("preview.png", preview_filename)
             preview_images.append(preview_filename)
 
-    print(preview_images)
+    if len(preview_images) == 0:
+        print("No new results to send!")
+        exit(-1)
     with open("notified_results.json", "w") as notified_results_file:
         json.dump(current_data, notified_results_file)
+
+    from email.mime.image import MIMEImage
+    from email.mime.multipart import MIMEMultipart
+
+    msg = MIMEMultipart()
+    msg["Subject"] = f"Daily Update: {datetime.now().strftime('%d/%m/%y')}"
+    msg["From"] = f"RM Notifier <{os.environ['MAIL_USERNAME']}>"
+    msg["To"] = "imnoamzaks@gmail.com"
+
+    for file in preview_images:
+        with open(file, "rb") as fp:
+            img = MIMEImage(fp.read())
+        img.add_header(
+            "Content-Disposition", "attachment; filename= %s" % file.split("/")[-1]
+        )
+        msg.attach(img)
+
+    try:
+        s = smtplib.SMTP("smtp-mail.outlook.com", 587)
+    except Exception as e:
+        s = smtplib.SMTP_SSL("smtp-mail.outlook.com", 465)
+    s.ehlo()
+    s.starttls()
+    s.login(os.environ["MAIL_USERNAME"], os.environ["MAIL_PASSWORD"])
+    s.sendmail(
+        os.environ["MAIL_USERNAME"], "ramanujanmachine@gmail.com", msg.as_string()
+    )
+    s.quit()

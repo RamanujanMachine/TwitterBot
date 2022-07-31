@@ -1,0 +1,38 @@
+name: Daily Update
+
+on:
+    schedule:
+        - cron: "0 7 * * *"
+
+jobs:
+    update:
+        name: Send Update
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the repository
+              uses: actions/checkout@v2
+            - name: Setup Python
+              uses: actions/setup-python@v2
+              with:
+                  python-version: "3.10"
+            - name: Install Python Dependencies
+              run: pip install --user tweepy pillow sympy
+            - name: Install LaTeX and ImageMagick
+              run: sudo apt-get -y install texlive texlive-extra-utils texlive-latex-extra imagemagick
+            - name: Fix ImageMagick Policy
+              run: sudo sed -i 's/rights="none" pattern="PDF"/rights="read | write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
+            - name: Run Script
+              run: python3 boinc_notifier.py
+              env:
+                  CONSUMER_TOKEN: ${{ secrets.CONSUMER_TOKEN }}
+                  CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+                  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+                  ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+                  MAIL_USERNAME: ${{ secrets. MAIL_USERNAME }}
+                  MAIL_PASSWORD: ${{ secrets. MAIL_PASSWORD }}
+            - name: Update Repository
+              run: |
+                  git config --global user.name 'Actions Bot'
+                  git config --global user.email 'action@github.com'
+                  git commit -am "Automated post-notifier update"
+                  git push
