@@ -53,7 +53,7 @@ if __name__ == "__main__":
     msg = MIMEMultipart()
     msg["Subject"] = f"Daily Update: {datetime.now().strftime('%d/%m/%y')}"
     msg["From"] = f"RM Notifier <{os.environ['MAIL_USERNAME']}>"
-    msg["To"] = "imnoamzaks@gmail.com"
+    msg["To"] = "ramanujanmachine@gmail.com"
 
     for file in preview_images:
         with open(file, "rb") as fp:
