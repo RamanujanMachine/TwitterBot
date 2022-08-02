@@ -244,4 +244,5 @@ if __name__ == "__main__":
     parser.add_argument("file")
     args = parser.parse_args()
 
-    generate_tex(args.file)
+    with open("result.tex", "w") as result_file:
+        result_file.write(generate_tex(args.file)[0])
