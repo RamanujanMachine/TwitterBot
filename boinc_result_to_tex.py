@@ -22,7 +22,7 @@ TEMPLATES = {
 \begin{equation*}
 \resizebox{\textwidth}{!}
 {%
-    $ RHSEquation $%
+    $ LHSEquation = RHSEquation $%
 }
 \end{equation*}
 \end{document}""",
@@ -170,7 +170,7 @@ def handle_general(result_data):
     an_equation, bn_equation = an_bn_equations
 
     consts = ["", r"\zeta (3)", r"\zeta (2)"]
-    lhs_equation = ""
+    lhs_equation = str(round(float(result_data[2]), 10))
     if result_data[3] is not None and len(result_data[3]) == 3:
         lhs_numerator = create_consts_sum_tex(result_data[3], consts)
         lhs_denominator = create_consts_sum_tex(result_data[4], consts)
@@ -196,7 +196,7 @@ def handle_zeta5(result_data):
 
     consts = ["", r"\zeta (3)", r"\zeta (5)"]
 
-    lhs_equation = ""
+    lhs_equation = str(round(float(result_data[2]), 10))
     if result_data[3] is not None and len(result_data[3]) == 3:
         lhs_numerator = create_consts_sum_tex(result_data[3], consts)
         lhs_denominator = create_consts_sum_tex(result_data[4], consts)
