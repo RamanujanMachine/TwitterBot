@@ -115,7 +115,7 @@ def generate_rhs(
     rhs_equation = (
         r"\cdots"
         if show_substitution
-        else (rf"\ddots + \cfrac{{{bn_equation}}}{{{an_equation}+\cdots}}")
+        else (rf"\ddots + \cfrac{{{bn_equation}}}{{{an_equation}}}")
     )
     for i in range(steps, 0, -1):
         rhs_equation = rf"{an(i-1)}+\cfrac{{{bn(i)}}}{{{rhs_equation}}}"
