@@ -10,8 +10,12 @@ def execute_silently(command: str, ignore_codes: List[int] = []) -> int:
     except CalledProcessError as e:
         if e.returncode in ignore_codes:
             return
-        print(f"Failure running '{command}': {e}")
-        exit(-1)
+
+        import os
+
+        os.system(command)  # Run again, this time showing output
+
+        raise e
 
 
 def render_preview(
