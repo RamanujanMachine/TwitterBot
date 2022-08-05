@@ -22,7 +22,7 @@ jobs:
             - name: Fix ImageMagick Policy
               run: sudo sed -i 's/rights="none" pattern="PDF"/rights="read | write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
             - name: Run Script
-              run: python3 bot.py
+              run: python3 src/bot.py
               env:
                   CONSUMER_TOKEN: ${{ secrets.CONSUMER_TOKEN }}
                   CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}

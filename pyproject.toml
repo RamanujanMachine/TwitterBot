@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "TwitterBot"
+version = "0.1.0"
+description = "Code for the Daily Ramanujan Twitter bot"
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tweepy = "^4.10.0"
+Pillow = "^9.2.0"
+sympy = "^1.10.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

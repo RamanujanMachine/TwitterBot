@@ -96,6 +96,16 @@ def generate_rhs(
             .replace("7 n", "7*n")
             .replace("8 n", "8*n")
             .replace("9 n", "9*n")
+            .replace("0(", "0*(")
+            .replace("1(", "1*(")
+            .replace("2(", "2*(")
+            .replace("3(", "3*(")
+            .replace("4(", "4*(")
+            .replace("5(", "5*(")
+            .replace("6(", "6*(")
+            .replace("7(", "7*(")
+            .replace("8(", "8*(")
+            .replace("9(", "9*(")
             .replace("^", "**")
             .replace(r"\cdot", "*")
             .replace("{", "(")
@@ -213,16 +223,15 @@ def handle_zeta5(result_data):
 HANDLERS = {"general": handle_general, "zeta5": handle_zeta5}
 
 
-def generate_tex(result_filename: str):
-    result_data = None
-    with open(result_filename, "r") as result_file:
-        result_data = json.load(result_file)[0]
+def filename_to_schema(filename: str):
+    return os.path.basename(filename).split("_")[1]
 
-    result_type = os.path.basename(result_filename).split("_")[1]
-    if result_type in HANDLERS:
-        template, an_equation, bn_equation, lhs_equation = HANDLERS[result_type](
-            result_data
-        )
+
+def generate_tex_from_str(result: str, schema: str):
+    result_data = json.loads(result)[0]
+
+    if schema in HANDLERS:
+        template, an_equation, bn_equation, lhs_equation = HANDLERS[schema](result_data)
         an_equation = an_equation.removeprefix("+")
         bn_equation = bn_equation.removeprefix("+")
         rhs_equation = generate_rhs(an_equation, bn_equation)
@@ -232,9 +241,15 @@ def generate_tex(result_filename: str):
         )
     else:
         print(
-            f"Unsupported result type '{result_type}'\nThe supported types are: {', '.join(HANDLERS.keys())}"
+            f"Unsupported result type '{schema}'\nThe supported types are: {', '.join(HANDLERS.keys())}"
         )
         exit(-1)
+
+
+def generate_tex(result_filename: str):
+    with open(result_filename, "r") as result_file:
+        result_data = result_file.read()
+    generate_tex_from_str(result_data, filename_to_schema(result_filename))
 
 
 if __name__ == "__main__":
