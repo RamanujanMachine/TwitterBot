@@ -1,4 +1,0 @@
-texlive 
-texlive-extra-utils 
-texlive-latex-extra 
-imagemagick
