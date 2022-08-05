@@ -1,3 +1,10 @@
+<h1 align="center">
+    Twitter Bot
+    <br>
+    <a href="https://mybinder.org/v2/gh/RamanujanMachine/TwitterBot/HEAD?labpath=demo.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg"></a>
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
+</h1>
+
 ## LaTeX to PNG
 
 Using the method `render_preview` from `render_preview.py` you can transform a LaTeX document (stored in a file) into a PNG image. To increase the resolution you can increase the `density` parameter.
