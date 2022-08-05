@@ -1,10 +1,10 @@
 """Renders a LaTeX document or equation to a high-quality .png image"""
 from subprocess import DEVNULL, CalledProcessError, check_call
 from PIL import Image
-from typing import Union
+from typing import Union, List
 
 
-def execute_silently(command: str, ignore_codes: list[int] = []) -> int:
+def execute_silently(command: str, ignore_codes: List[int] = []) -> int:
     try:
         check_call(command.split(" "), stdout=DEVNULL, stderr=DEVNULL, stdin=DEVNULL)
     except CalledProcessError as e:

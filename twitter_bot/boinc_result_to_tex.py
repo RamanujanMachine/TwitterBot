@@ -2,6 +2,7 @@
 import json
 import os
 from sympy import symbols, latex
+from typing import List
 
 TEMPLATES = {
     "conjecture": r"""\documentclass[preview,border=2pt]{standalone}
@@ -151,7 +152,7 @@ def plus_coefficient_to_tex(coefficient: int, term: str, add_dot_and_parantheses
     )
 
 
-def create_consts_sum_tex(coefficients: list[int], consts: list[str]) -> str:
+def create_consts_sum_tex(coefficients: List[int], consts: List[str]) -> str:
     assert len(coefficients) == len(consts)
     result = coefficient_to_tex(
         coefficients[0], consts[0], add_dot_and_parantheses=False
@@ -163,9 +164,15 @@ def create_consts_sum_tex(coefficients: list[int], consts: list[str]) -> str:
     return result
 
 
+def removeprefix(s: str, prefix: str) -> str:
+    if s.startswith(prefix):
+        s = s[len(prefix) :]
+    return s
+
+
 def fraction(numerator: str, denominator: str) -> str:
-    numerator = numerator.removeprefix("+")
-    denominator = denominator.removeprefix("+")
+    numerator = removeprefix(numerator, "+")
+    denominator = removeprefix(denominator, "+")
     return rf"\cfrac{{{numerator}}}{{{denominator}}}"
 
 
@@ -232,8 +239,8 @@ def generate_tex_from_str(result: str, schema: str):
 
     if schema in HANDLERS:
         template, an_equation, bn_equation, lhs_equation = HANDLERS[schema](result_data)
-        an_equation = an_equation.removeprefix("+")
-        bn_equation = bn_equation.removeprefix("+")
+        an_equation = removeprefix(an_equation, "+")
+        bn_equation = removeprefix(bn_equation, "+")
         rhs_equation = generate_rhs(an_equation, bn_equation)
         return (
             format_tex(template, an_equation, bn_equation, lhs_equation, rhs_equation),
