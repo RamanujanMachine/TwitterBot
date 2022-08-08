@@ -1,7 +1,4 @@
-"""
-A short script to notify the Ramanujan Machine team about new results from BOINC
-WARNING: the script assumes the user uses Outlook. Gmail no longer supports this simple authentication method.
-"""
+"""A short script to notify the Ramanujan Machine team about new results from BOINC"""
 
 from datetime import datetime
 from get_boinc_results import get_webpage
@@ -64,9 +61,9 @@ if __name__ == "__main__":
         msg.attach(img)
 
     try:
-        s = smtplib.SMTP("smtp-mail.outlook.com", 587)
+        s = smtplib.SMTP(os.environ["MAIL_SERVER"], 587)
     except Exception as e:
-        s = smtplib.SMTP_SSL("smtp-mail.outlook.com", 465)
+        s = smtplib.SMTP_SSL(os.environ["MAIL_SERVER"], 465)
     s.ehlo()
     s.starttls()
     s.login(os.environ["MAIL_USERNAME"], os.environ["MAIL_PASSWORD"])

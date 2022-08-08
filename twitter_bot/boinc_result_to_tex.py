@@ -256,7 +256,7 @@ def generate_tex_from_str(result: str, schema: str):
 def generate_tex(result_filename: str):
     with open(result_filename, "r") as result_file:
         result_data = result_file.read()
-    generate_tex_from_str(result_data, filename_to_schema(result_filename))
+    return generate_tex_from_str(result_data, filename_to_schema(result_filename))
 
 
 if __name__ == "__main__":

@@ -1,8 +1,6 @@
 name: Daily Update
 
-on:
-    schedule:
-        - cron: "0 7 * * *"
+on: push
 
 jobs:
     update:
@@ -22,7 +20,7 @@ jobs:
             - name: Fix ImageMagick Policy
               run: sudo sed -i 's/rights="none" pattern="PDF"/rights="read | write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
             - name: Run Script
-              run: python3 src/boinc_notifier.py
+              run: python3 twitter_bot/boinc_notifier.py
               env:
                   CONSUMER_TOKEN: ${{ secrets.CONSUMER_TOKEN }}
                   CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
@@ -30,6 +28,7 @@ jobs:
                   ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
                   MAIL_USERNAME: ${{ secrets. MAIL_USERNAME }}
                   MAIL_PASSWORD: ${{ secrets. MAIL_PASSWORD }}
+                  MAIL_SERVER: ${{ secrets. MAIL_SERVER }}
             - name: Update Repository
               run: |
                   git config --global user.name 'Actions Bot'
