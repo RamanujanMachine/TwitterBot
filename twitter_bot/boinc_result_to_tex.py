@@ -107,10 +107,21 @@ def generate_rhs(
             .replace("7(", "7*(")
             .replace("8(", "8*(")
             .replace("9(", "9*(")
+            .replace("0 (", "0*(")
+            .replace("1 (", "1*(")
+            .replace("2 (", "2*(")
+            .replace("3 (", "3*(")
+            .replace("4 (", "4*(")
+            .replace("5 (", "5*(")
+            .replace("6 (", "6*(")
+            .replace("7 (", "7*(")
+            .replace("8 (", "8*(")
+            .replace("9 (", "9*(")
             .replace("^", "**")
             .replace(r"\cdot", "*")
             .replace("{", "(")
             .replace("}", ")")
+            .replace(")(", ")*(")
         )
 
     def an(n):
@@ -134,32 +145,36 @@ def generate_rhs(
     return rhs_equation
 
 
-def coefficient_to_tex(coefficient: int, term: str, add_dot_and_parantheses=True):
+def coefficient_to_tex(coefficient: int, term: str, add_dot=True, add_parantheses=True):
     if coefficient == 0:
         return ""
     if coefficient == 1 and term != "":
         return term
     if coefficient == -1 and term != "":
         return "-" + term
-    if add_dot_and_parantheses:
-        return rf"{coefficient} \cdot ({term})"
+    if add_parantheses:
+        term = f"({term})"
+    if add_dot:
+        return rf"{coefficient} \cdot {term}"
     return f"{coefficient} {term}"
 
 
-def plus_coefficient_to_tex(coefficient: int, term: str, add_dot_and_parantheses=True):
+def plus_coefficient_to_tex(
+    coefficient: int, term: str, add_dot=True, add_parantheses=True
+):
     return ("+" if coefficient > 0 else "") + coefficient_to_tex(
-        coefficient, term, add_dot_and_parantheses
+        coefficient, term, add_dot, add_parantheses
     )
 
 
 def create_consts_sum_tex(coefficients: List[int], consts: List[str]) -> str:
     assert len(coefficients) == len(consts)
     result = coefficient_to_tex(
-        coefficients[0], consts[0], add_dot_and_parantheses=False
+        coefficients[0], consts[0], add_dot=False, add_parantheses=False
     )
     for i in range(1, len(coefficients)):
         result += plus_coefficient_to_tex(
-            coefficients[i], consts[i], add_dot_and_parantheses=False
+            coefficients[i], consts[i], add_dot=False, add_parantheses=False
         )
     return result
 
@@ -208,7 +223,7 @@ def handle_zeta5(result_data):
         + plus_coefficient_to_tex(result_data[0][2], "2n + 1")
     )
     bn_equation = coefficient_to_tex(
-        -(result_data[1][0] ** 2), "n^{10}", add_dot_and_parantheses=False
+        -(result_data[1][0] ** 2), "n^{10}", add_dot=False, add_parantheses=False
     )
 
     consts = ["", r"\zeta (3)", r"\zeta (5)"]

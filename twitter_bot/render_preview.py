@@ -71,9 +71,10 @@ def render_equation(equation: str, **kwargs) -> None:
 
 
 if __name__ == "__main__":
-    from argparse import ArgumentParser
+    import argparse
 
-    parser = ArgumentParser()
+    parser = argparse.ArgumentParser()
     parser.add_argument("file")
+    parser.add_argument("--transparent", action=argparse.BooleanOptionalAction)
     args = parser.parse_args()
-    render_preview(args.file)
+    render_preview(args.file, transparent=args.transparent)

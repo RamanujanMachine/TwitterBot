@@ -1,0 +1,4 @@
+{
+    "body": "Check out today's conjecture!",
+    "tex": "\\documentclass[preview,border=2pt]{standalone}\n\\usepackage{amsmath}\n\\usepackage{graphicx}\n\\begin{document}\n\\begin{equation*}\n\\resizebox{\\textwidth}{!}\n{%\n    $ 6.9431070487=\\displaystyle\\lim _{n\\to\\infty} 7+\\cfrac{-7}{129+\\cfrac{-4096}{761+\\cfrac{-177147}{\\ddots + \\cfrac{- n^{10} - 6 n^{9}}{n^5 +(n+1)^5 +6(n+1)^4}}}} $%\n}\n\\end{equation*}\n\\end{document}"
+}
