@@ -1,8 +1,6 @@
 name: Daily Tweet
 
-on:
-    schedule:
-        - cron: "0 8 * * *"
+on: push
 
 jobs:
     tweet:
