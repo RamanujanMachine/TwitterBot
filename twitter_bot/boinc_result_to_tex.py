@@ -1,7 +1,8 @@
 """Converts the different BOINC result schemas to fancy TeX documents."""
 import json
 import os
-from sympy import symbols, latex
+import sympy
+from sympy import symbols, latex, Poly
 from typing import List
 
 TEMPLATES = {
@@ -215,6 +216,34 @@ def handle_general(result_data):
         lhs_equation,
     )
 
+def handle_zeta(result_data, order):
+    an_equation = coefficient_to_tex(result_data[0][0], f"n^{order} + (n + 1)^{order}")
+    for i, term_deg in enumerate(range(order-2, 1, -2)):
+        an_equation += plus_coefficient_to_tex(result_data[0][i+1], f"n^{term_deg} + (n + 1)^{term_deg}")
+    
+    if order % 2 == 1:
+        an_equation += plus_coefficient_to_tex(result_data[0][-1], "2n + 1") 
+        consts = [""] + [f"\\zeta ({i})" for i in range(3, order+1, 2)]
+    else:
+        an_equation += plus_coefficient_to_tex(result_data[0][-1], "1") 
+        consts = [""] + [f"\\zeta ({i})" for i in range(2, order+1, 2)]
+    print(an_equation)
+    bn_equation = coefficient_to_tex(
+        -(result_data[1][0] ** 2), f"n^{order*2}", add_dot=False, add_parantheses=False
+    )
+
+    lhs_equation = str(round(float(result_data[2]), 10))
+    if result_data[3] is not None and len(result_data[3]) == 3:
+        lhs_numerator = create_consts_sum_tex(result_data[3], consts)
+        lhs_denominator = create_consts_sum_tex(result_data[4], consts)
+        lhs_equation = fraction(lhs_numerator, lhs_denominator)
+
+    return (
+        "conjecture" if lhs_equation != "" else "unknown-lhs",
+        an_equation,
+        bn_equation,
+        lhs_equation,
+    )
 
 def handle_zeta5(result_data):
     an_equation = (
@@ -241,8 +270,66 @@ def handle_zeta5(result_data):
         lhs_equation,
     )
 
+def _general_poly_to_sympy(coefs, n):
+    terms = [c*(n**deg) for deg, c in enumerate(coefs[::-1])]
+    return Poly(sum(terms), n)
 
-HANDLERS = {"general": handle_general, "zeta5": handle_zeta5}
+
+def handle_10deg_2roots(result_data):
+    # find b_n roots
+    n = sympy.var('n')
+    bn_expr = _general_poly_to_sympy(result_data[1][:3], n)
+    c, d = -bn_expr.root(0), -bn_expr.root(1)
+    bn_tex = f'-n^8(n+{c})(n+{d})'
+    # there are a few possible nontations for an.
+    an_expr = _general_poly_to_sympy(result_data[0], n)
+    an_tex = coefficient_to_tex(result_data[0][0]//2, "n^5 + (n + 1)^5")
+
+    if c == d:
+        an_tex += plus_coefficient_to_tex(d, "n^4 + (n+1)^4")
+        reduced_an_expr = an_expr - Poly((n**5 + (n+1)**5) + c * (n+1)**4 + c * n**4)
+        if reduced_an_expr != 0:
+            an_tex += '+' + latex(reduced_an_expr.expr)
+            # an_tex += plus_coefficient_to_tex(latex(reduced_an_expr.expr), add_parantheses=False)
+
+    elif an_expr == Poly((n**5 + (n+1)**5) + c * (n+1)**4 + d * n**4):
+        an_tex += plus_coefficient_to_tex(d, "n^4", add_parantheses=False)
+        an_tex += plus_coefficient_to_tex(c, "(n+1)^4", add_parantheses=False)
+
+    elif an_expr == Poly((n**5 + (n+1)**5) + d * (n+1)**4 + c * n**4):
+        an_tex += plus_coefficient_to_tex(c, "n^4", add_parantheses=False)
+        an_tex += plus_coefficient_to_tex(d, "(n+1)^4", add_parantheses=False)
+        
+    else:
+        # we'll rearrange c,d so that c<d
+        c, d = min(c, d), max(c, d)
+        an_tex += plus_coefficient_to_tex(d, "(n+1)^4", add_parantheses=False)
+        reduced_an_expr = an_expr - Poly((n**5 + (n+1)**5) + d * (n+1)**4)
+        an_tex += '+' + latex(reduced_an_expr.expr)
+
+    # lhs
+    consts = [""] + [f"\\zeta ({i})" for i in range(5, 1, -1)]
+    lhs_equation = str(round(float(result_data[2]), 10))
+    if result_data[3] is not None and len(result_data[3]) == 3:
+        lhs_numerator = create_consts_sum_tex(result_data[3], consts)
+        lhs_denominator = create_consts_sum_tex(result_data[4], consts)
+        lhs_equation = fraction(lhs_numerator, lhs_denominator)
+
+    return (
+        "conjecture" if lhs_equation != "" else "unknown-lhs",
+        an_tex,
+        bn_tex,
+        lhs_equation,
+    )
+
+HANDLERS = {
+    "general": handle_general, 
+    "zeta7": lambda x: handle_zeta(x, 7),
+    "zeta5": lambda x: handle_zeta(x, 5),
+    "zeta3": lambda x: handle_zeta(x, 3),
+    "zeta2": lambda x: handle_zeta(x, 2),
+    "DEG2": handle_10deg_2roots
+    }
 
 
 def filename_to_schema(filename: str):
