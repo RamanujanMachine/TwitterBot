@@ -25,18 +25,23 @@ if __name__ == "__main__":
 
     preview_images = []
     for result in current_data:
-        if result not in previous_data or current_data[result] != previous_data[result]:
-            result_filename = os.path.join("boinc_results", result)
-            with open(result_filename, "w") as result_file:
-                result_file.write(
-                    get_webpage("https://rnma.xyz/boinc/result/" + result)
-                )
-            with open("result.tex", "w") as result_file:
-                result_file.write(generate_tex(result_filename)[0])
-            render_preview("result.tex")
-            preview_filename = os.path.join("boinc_results", result + ".png")
-            shutil.move("preview.png", preview_filename)
-            preview_images.append(preview_filename)
+        try:
+            if result not in previous_data or current_data[result] != previous_data[result]:
+                result_filename = os.path.join("boinc_results", result)
+                with open(result_filename, "w") as result_file:
+                    result_file.write(
+                        get_webpage("https://rnma.xyz/boinc/result/" + result)
+                    )
+                with open("result.tex", "w") as result_file:
+                    result_file.write(generate_tex(result_filename)[0])
+                render_preview("result.tex")
+                preview_filename = os.path.join("boinc_results", result + ".png")
+                shutil.move("preview.png", preview_filename)
+                preview_images.append(preview_filename)
+        except Exception as e:
+            print('Error when processing result. Result details:')
+            print(result)
+            print(f'Error received:\n{e}')
 
     if len(preview_images) == 0:
         print("No new results to send!")
