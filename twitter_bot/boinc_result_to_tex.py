@@ -349,10 +349,9 @@ def generate_tex_from_str(result: str, schema: str):
             template,
         )
     else:
-        print(
-            f"Unsupported result type '{schema}'\nThe supported types are: {', '.join(HANDLERS.keys())}"
-        )
-        exit(-1)
+        err_msg += f"Unsupported result type '{schema}'\nThe supported types are: {', '.join(HANDLERS.keys())}"
+        print(err_msg)
+        raise Exception(err_msg)
 
 
 def generate_tex(result_filename: str):
