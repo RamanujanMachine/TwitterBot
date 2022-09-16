@@ -280,32 +280,40 @@ def handle_10deg_2roots(result_data):
     n = sympy.var('n')
     bn_expr = _general_poly_to_sympy(result_data[1][:3], n)
     c, d = -bn_expr.root(0), -bn_expr.root(1)
-    bn_tex = f'-n^8(n+{c})(n+{d})'
-    # there are a few possible nontations for an.
-    an_expr = _general_poly_to_sympy(result_data[0], n)
-    an_tex = coefficient_to_tex(result_data[0][0]//2, "n^5 + (n + 1)^5")
 
-    if c == d:
-        an_tex += plus_coefficient_to_tex(d, "n^4 + (n+1)^4")
-        reduced_an_expr = an_expr - Poly((n**5 + (n+1)**5) + c * (n+1)**4 + c * n**4)
-        if reduced_an_expr != 0:
-            an_tex += '+' + latex(reduced_an_expr.expr)
-            # an_tex += plus_coefficient_to_tex(latex(reduced_an_expr.expr), add_parantheses=False)
-
-    elif an_expr == Poly((n**5 + (n+1)**5) + c * (n+1)**4 + d * n**4):
-        an_tex += plus_coefficient_to_tex(d, "n^4", add_parantheses=False)
-        an_tex += plus_coefficient_to_tex(c, "(n+1)^4", add_parantheses=False)
-
-    elif an_expr == Poly((n**5 + (n+1)**5) + d * (n+1)**4 + c * n**4):
-        an_tex += plus_coefficient_to_tex(c, "n^4", add_parantheses=False)
-        an_tex += plus_coefficient_to_tex(d, "(n+1)^4", add_parantheses=False)
+    # All results should match one of these templates
+    an_options = {
+        Poly( n**5 + ((n+1)**3) * (n + 1 + c) * (n + 1 + d)):
+            "n^5 + (n+1)^3 (n + 1 + {c})(n + 1 + {d})",
+        Poly( n**4*(n + c) + ((n+1)**4) * (n + 1 + d)):
+            "n^4(n + {c}) + (n+1)^4(n + 1 + {d})",
+        Poly( n**4*(n + d) + ((n+1)**4) * (n + 1 + c)):
+            "n^4(n + {d}) + (n+1)^4(n + 1 + {c})",
+        Poly( n**3*(n + c)*(n + d) + (n+1)**5):
+            "n^3(n + {c})(n + {d}) + (n+1)^5)"
+            }
         
+    bn_tex = f'-n^8(n+{c})(n+{d})'
+
+    an_expr = _general_poly_to_sympy(result_data[0], n)
+    for an_opt, tex_template in an_options.items():
+        if an_expr - an_opt == 0:
+            an_tex = tex_template.format(c = c, d = d)
+            break
+    # No template was matched
     else:
-        # we'll rearrange c,d so that c<d
-        c, d = min(c, d), max(c, d)
-        an_tex += plus_coefficient_to_tex(d, "(n+1)^4", add_parantheses=False)
-        reduced_an_expr = an_expr - Poly((n**5 + (n+1)**5) + d * (n+1)**4)
-        an_tex += '+' + latex(reduced_an_expr.expr)
+        polys_gcd = sympy.Poly.gcd(an_expr*an_expr.subs({n:n-1}), bn_expr)
+        if polys_gcd != 1:
+            # Is an inflation
+            an_tex = f'({polys_gcd.expr})*({(an_expr/polys_gcd).simplify()})'
+            print(an_tex)
+        else:
+            # use the generic template
+            an_tex = coefficient_to_tex(result_data[0][0]//2, "n^5 + (n + 1)^5")
+            c, d = min(c, d), max(c, d)
+            an_tex += plus_coefficient_to_tex(d, "(n+1)^4", add_parantheses=False)
+            reduced_an_expr = an_expr - Poly((n**5 + (n+1)**5) + d * (n+1)**4)
+            an_tex += '+' + latex(reduced_an_expr.expr)
 
     # lhs
     consts = [""] + [f"\\zeta ({i})" for i in range(5, 1, -1)]
