@@ -290,7 +290,7 @@ def handle_10deg_2roots(result_data):
         Poly( n**4*(n + d) + ((n+1)**4) * (n + 1 + c)):
             "n^4(n + {d}) + (n+1)^4(n + 1 + {c})",
         Poly( n**3*(n + c)*(n + d) + (n+1)**5):
-            "n^3(n + {c})(n + {d}) + (n+1)^5)"
+            "n^3(n + {c})(n + {d}) + (n+1)^5"
             }
         
     bn_tex = f'-n^8(n+{c})(n+{d})'
@@ -305,8 +305,8 @@ def handle_10deg_2roots(result_data):
         polys_gcd = sympy.Poly.gcd(an_expr*an_expr.subs({n:n-1}), bn_expr)
         if polys_gcd != 1:
             # Is an inflation
-            an_tex = f'({polys_gcd.expr})*({(an_expr/polys_gcd).simplify()})'
-            print(an_tex)
+            an_tex = f'({latex(polys_gcd.expr)})({latex((an_expr/polys_gcd).simplify())})'
+            
         else:
             # use the generic template
             an_tex = coefficient_to_tex(result_data[0][0]//2, "n^5 + (n + 1)^5")
@@ -330,13 +330,80 @@ def handle_10deg_2roots(result_data):
         lhs_equation,
     )
 
+
+def handle_ofir_single_half_root(result_data):
+    # Here we've gave bn a single half root. So `bn=-n^9(n+1/2)`. 
+    # To use integer coefficients, we used `bn=-n^9(2n+1)` and 
+    # `bn=-2n^9(2n+1)` for the latter, an expression from Ofir's scheme
+    # should apply with expansion of 2. Otherwise, we have no clue :)
+    n = sympy.var('n')
+    
+    if result_data[1][0] == -4:
+        bn_tex = '-2(2n+1) \\cdot n^9'
+        bn_expr = Poly(-2*(2*n+1)*n**9)
+    else:
+        bn_tex = '-(2n+1) \\cdot n^9'
+        bn_expr = Poly(-(2*n+1)*n**9)
+
+    an_expr = _general_poly_to_sympy(result_data[0], n)
+    an_tex = ''
+
+    if result_data[1][0] == -4 and result_data[0][0] == 4:
+        # expansion of 2, maybe Ofir's case
+
+        an_options = {
+            Poly( 2 * (n**5 + (n+1+1/2)*(n+1)**4) ):
+                r"2 (n^5 + (n+1+\frac{1}{2})(n+1)^4)",
+            Poly( 2 * ((n+1/2)*n**4 + (n+1)**5) ):
+                r"2 ((n+\frac{1}{2})n^4 + (n+1)^5)"
+            }
+            
+
+        for an_opt, tex_template in an_options.items():
+            if an_expr - an_opt == 0:
+                an_tex = tex_template
+                break
+        
+    # No template was matched
+    if an_tex == '':
+        # maybe expansion
+        polys_gcd = sympy.Poly.gcd(an_expr*an_expr.subs({n:n-1}), bn_expr)
+        if polys_gcd != 1:
+            an_tex = f'({latex(polys_gcd.expr)})({latex((an_expr/polys_gcd).simplify())})'
+            
+        else:
+            # use the generic template
+            an_tex = coefficient_to_tex(result_data[0][0]//2, "n^5 + (n + 1)^5")
+            reduced_an_expr = an_expr - (result_data[0][0]//2) * Poly((n**5 + (n+1)**5))
+            an_tex += '+' + latex(reduced_an_expr.expr)
+
+    
+
+    # lhs
+    consts = [""] + [f"\\zeta ({i})" for i in range(5, 1, -1)]
+    lhs_equation = str(round(float(result_data[2]), 10))
+    if result_data[3] is not None and len(result_data[3]) == 3:
+        lhs_numerator = create_consts_sum_tex(result_data[3], consts)
+        lhs_denominator = create_consts_sum_tex(result_data[4], consts)
+        lhs_equation = fraction(lhs_numerator, lhs_denominator)
+
+    return (
+        "conjecture" if lhs_equation != "" else "unknown-lhs",
+        an_tex,
+        bn_tex,
+        lhs_equation,
+    )
+
+
+
 HANDLERS = {
     "general": handle_general, 
     "zeta7": lambda x: handle_zeta(x, 7),
     "zeta5": lambda x: handle_zeta(x, 5),
     "zeta3": lambda x: handle_zeta(x, 3),
     "zeta2": lambda x: handle_zeta(x, 2),
-    "DEG2": handle_10deg_2roots
+    "DEG2": handle_10deg_2roots,
+    "SingleHalfRoota": handle_ofir_single_half_root
     }
 
 
