@@ -353,12 +353,11 @@ def handle_ofir_single_half_root(result_data):
 
         an_options = {
             Poly( 2 * (n**5 + (n+1+1/2)*(n+1)**4) ):
-                r"2 (n^5 + (n+1+\frac{1}{2})(n+1)^4)",
+                r"2 (n^5 + (n+1+1/2) \cdot (n+1)^4)",
             Poly( 2 * ((n+1/2)*n**4 + (n+1)**5) ):
-                r"2 ((n+\frac{1}{2})n^4 + (n+1)^5)"
+                r"2 ((n+1/2) \cdot n^4 + (n+1)^5)"
             }
             
-
         for an_opt, tex_template in an_options.items():
             if an_expr - an_opt == 0:
                 an_tex = tex_template
