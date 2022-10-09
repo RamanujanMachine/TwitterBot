@@ -350,7 +350,6 @@ def handle_ofir_single_half_root(result_data):
 
     if result_data[1][0] == -4 and result_data[0][0] == 4:
         # expansion of 2, maybe Ofir's case
-
         an_options = {
             Poly( 2 * (n**5 + (n+1+1/2)*(n+1)**4) ):
                 r"2 (n^5 + (n+1+1/2) \cdot (n+1)^4)",
@@ -362,7 +361,21 @@ def handle_ofir_single_half_root(result_data):
             if an_expr - an_opt == 0:
                 an_tex = tex_template
                 break
-        
+    else:
+        an_options = {}
+        for c1 in range(1, 6):
+            for c2 in range(1, 6):
+                an_options[Poly(c1*n**5 + c2*(n+1+1/2)*(n+1)**4)] = \
+                    f"{c1} \\cdot n^5 + {c2} \\cdot (n+1+1/2) \\cdot (n+1)^4"
+                an_options[Poly(c1*n**4*(n+1/2) + c2*(n+1)**5)] = \
+                    f"{c1} \\cdot (n+1/2) \\cdot n^4 + {c2} \\cdot (n+1)^5"
+
+        for an_opt, tex_template in an_options.items():
+            if an_expr - an_opt == 0:
+                an_tex = tex_template
+                break
+
+
     # No template was matched
     if an_tex == '':
         # maybe expansion
