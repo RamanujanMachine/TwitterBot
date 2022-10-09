@@ -1,7 +1,8 @@
 """Converts the different BOINC result schemas to fancy TeX documents."""
 import json
 import os
-from sympy import symbols, latex
+import sympy
+from sympy import symbols, latex, Poly
 from typing import List
 
 TEMPLATES = {
@@ -215,6 +216,34 @@ def handle_general(result_data):
         lhs_equation,
     )
 
+def handle_zeta(result_data, order):
+    an_equation = coefficient_to_tex(result_data[0][0], f"n^{order} + (n + 1)^{order}")
+    for i, term_deg in enumerate(range(order-2, 1, -2)):
+        an_equation += plus_coefficient_to_tex(result_data[0][i+1], f"n^{term_deg} + (n + 1)^{term_deg}")
+    
+    if order % 2 == 1:
+        an_equation += plus_coefficient_to_tex(result_data[0][-1], "2n + 1") 
+        consts = [""] + [f"\\zeta ({i})" for i in range(3, order+1, 2)]
+    else:
+        an_equation += plus_coefficient_to_tex(result_data[0][-1], "1") 
+        consts = [""] + [f"\\zeta ({i})" for i in range(2, order+1, 2)]
+    print(an_equation)
+    bn_equation = coefficient_to_tex(
+        -(result_data[1][0] ** 2), f"n^{order*2}", add_dot=False, add_parantheses=False
+    )
+
+    lhs_equation = str(round(float(result_data[2]), 10))
+    if result_data[3] is not None and len(result_data[3]) == 3:
+        lhs_numerator = create_consts_sum_tex(result_data[3], consts)
+        lhs_denominator = create_consts_sum_tex(result_data[4], consts)
+        lhs_equation = fraction(lhs_numerator, lhs_denominator)
+
+    return (
+        "conjecture" if lhs_equation != "" else "unknown-lhs",
+        an_equation,
+        bn_equation,
+        lhs_equation,
+    )
 
 def handle_zeta5(result_data):
     an_equation = (
@@ -241,8 +270,153 @@ def handle_zeta5(result_data):
         lhs_equation,
     )
 
+def _general_poly_to_sympy(coefs, n):
+    terms = [c*(n**deg) for deg, c in enumerate(coefs[::-1])]
+    return Poly(sum(terms), n)
 
-HANDLERS = {"general": handle_general, "zeta5": handle_zeta5}
+
+def handle_10deg_2roots(result_data):
+    # find b_n roots
+    n = sympy.var('n')
+    bn_expr = _general_poly_to_sympy(result_data[1][:3], n)
+    c, d = -bn_expr.root(0), -bn_expr.root(1)
+
+    # All results should match one of these templates
+    an_options = {
+        Poly( n**5 + ((n+1)**3) * (n + 1 + c) * (n + 1 + d)):
+            "n^5 + (n+1)^3 (n + 1 + {c})(n + 1 + {d})",
+        Poly( n**4*(n + c) + ((n+1)**4) * (n + 1 + d)):
+            "n^4(n + {c}) + (n+1)^4(n + 1 + {d})",
+        Poly( n**4*(n + d) + ((n+1)**4) * (n + 1 + c)):
+            "n^4(n + {d}) + (n+1)^4(n + 1 + {c})",
+        Poly( n**3*(n + c)*(n + d) + (n+1)**5):
+            "n^3(n + {c})(n + {d}) + (n+1)^5"
+            }
+        
+    bn_tex = f'-n^8(n+{c})(n+{d})'
+
+    an_expr = _general_poly_to_sympy(result_data[0], n)
+    for an_opt, tex_template in an_options.items():
+        if an_expr - an_opt == 0:
+            an_tex = tex_template.format(c = c, d = d)
+            break
+    # No template was matched
+    else:
+        polys_gcd = sympy.Poly.gcd(an_expr*an_expr.subs({n:n-1}), bn_expr)
+        if polys_gcd != 1:
+            # Is an inflation
+            an_tex = f'({latex(polys_gcd.expr)})({latex((an_expr/polys_gcd).simplify())})'
+            
+        else:
+            # use the generic template
+            an_tex = coefficient_to_tex(result_data[0][0]//2, "n^5 + (n + 1)^5")
+            c, d = min(c, d), max(c, d)
+            an_tex += plus_coefficient_to_tex(d, "(n+1)^4", add_parantheses=False)
+            reduced_an_expr = an_expr - Poly((n**5 + (n+1)**5) + d * (n+1)**4)
+            an_tex += '+' + latex(reduced_an_expr.expr)
+
+    # lhs
+    consts = [""] + [f"\\zeta ({i})" for i in range(5, 1, -1)]
+    lhs_equation = str(round(float(result_data[2]), 10))
+    if result_data[3] is not None and len(result_data[3]) == 3:
+        lhs_numerator = create_consts_sum_tex(result_data[3], consts)
+        lhs_denominator = create_consts_sum_tex(result_data[4], consts)
+        lhs_equation = fraction(lhs_numerator, lhs_denominator)
+
+    return (
+        "conjecture" if lhs_equation != "" else "unknown-lhs",
+        an_tex,
+        bn_tex,
+        lhs_equation,
+    )
+
+
+def handle_ofir_single_half_root(result_data):
+    # Here we've gave bn a single half root. So `bn=-n^9(n+1/2)`. 
+    # To use integer coefficients, we used `bn=-n^9(2n+1)` and 
+    # `bn=-2n^9(2n+1)` for the latter, an expression from Ofir's scheme
+    # should apply with expansion of 2. Otherwise, we have no clue :)
+    n = sympy.var('n')
+    
+    if result_data[1][0] == -4:
+        bn_tex = '-2(2n+1) \\cdot n^9'
+        bn_expr = Poly(-2*(2*n+1)*n**9)
+    else:
+        bn_tex = '-(2n+1) \\cdot n^9'
+        bn_expr = Poly(-(2*n+1)*n**9)
+
+    an_expr = _general_poly_to_sympy(result_data[0], n)
+    an_tex = ''
+
+    if result_data[1][0] == -4 and result_data[0][0] == 4:
+        # expansion of 2, maybe Ofir's case
+        an_options = {
+            Poly( 2 * (n**5 + (n+1+1/2)*(n+1)**4) ):
+                r"2 (n^5 + (n+1+1/2) \cdot (n+1)^4)",
+            Poly( 2 * ((n+1/2)*n**4 + (n+1)**5) ):
+                r"2 ((n+1/2) \cdot n^4 + (n+1)^5)"
+            }
+            
+        for an_opt, tex_template in an_options.items():
+            if an_expr - an_opt == 0:
+                an_tex = tex_template
+                break
+    else:
+        an_options = {}
+        for c1 in range(1, 6):
+            for c2 in range(1, 6):
+                an_options[Poly(c1*n**5 + c2*(n+1+1/2)*(n+1)**4)] = \
+                    f"{c1} \\cdot n^5 + {c2} \\cdot (n+1+1/2) \\cdot (n+1)^4"
+                an_options[Poly(c1*n**4*(n+1/2) + c2*(n+1)**5)] = \
+                    f"{c1} \\cdot (n+1/2) \\cdot n^4 + {c2} \\cdot (n+1)^5"
+
+        for an_opt, tex_template in an_options.items():
+            if an_expr - an_opt == 0:
+                an_tex = tex_template
+                break
+
+
+    # No template was matched
+    if an_tex == '':
+        # maybe expansion
+        polys_gcd = sympy.Poly.gcd(an_expr*an_expr.subs({n:n-1}), bn_expr)
+        if polys_gcd != 1:
+            an_tex = f'({latex(polys_gcd.expr)})({latex((an_expr/polys_gcd).simplify())})'
+            
+        else:
+            # use the generic template
+            an_tex = coefficient_to_tex(result_data[0][0]//2, "n^5 + (n + 1)^5")
+            reduced_an_expr = an_expr - (result_data[0][0]//2) * Poly((n**5 + (n+1)**5))
+            an_tex += '+' + latex(reduced_an_expr.expr)
+
+    
+
+    # lhs
+    consts = [""] + [f"\\zeta ({i})" for i in range(5, 1, -1)]
+    lhs_equation = str(round(float(result_data[2]), 10))
+    if result_data[3] is not None and len(result_data[3]) == 3:
+        lhs_numerator = create_consts_sum_tex(result_data[3], consts)
+        lhs_denominator = create_consts_sum_tex(result_data[4], consts)
+        lhs_equation = fraction(lhs_numerator, lhs_denominator)
+
+    return (
+        "conjecture" if lhs_equation != "" else "unknown-lhs",
+        an_tex,
+        bn_tex,
+        lhs_equation,
+    )
+
+
+
+HANDLERS = {
+    "general": handle_general, 
+    "zeta7": lambda x: handle_zeta(x, 7),
+    "zeta5": lambda x: handle_zeta(x, 5),
+    "zeta3": lambda x: handle_zeta(x, 3),
+    "zeta2": lambda x: handle_zeta(x, 2),
+    "DEG2": handle_10deg_2roots,
+    "SingleHalfRoota": handle_ofir_single_half_root
+    }
 
 
 def filename_to_schema(filename: str):
@@ -262,10 +436,9 @@ def generate_tex_from_str(result: str, schema: str):
             template,
         )
     else:
-        print(
-            f"Unsupported result type '{schema}'\nThe supported types are: {', '.join(HANDLERS.keys())}"
-        )
-        exit(-1)
+        err_msg = f"Unsupported result type '{schema}'\nThe supported types are: {', '.join(HANDLERS.keys())}"
+        print(err_msg)
+        raise Exception(err_msg)
 
 
 def generate_tex(result_filename: str):
