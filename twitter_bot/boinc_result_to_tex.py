@@ -51,7 +51,7 @@ JOB_NAME_TO_RESULT_SCHEMES = {
         'bn': [
             -n * (n+c0)**9
         ]
-    }
+    },
     # This scheme is chosen here more as an example; There aren't that many templates which are relevant for a single batch
     'SingleHalfRoota': {
         'an': [
@@ -229,10 +229,7 @@ def generate_tex_from_str(result, scheme):
         print(err_msg)
         raise Exception(err_msg)
 
-
-def generate_tex(result_filename):
-    with open(result_filename, "r") as result_file:
-        result_data = json.load(result_file)[0]
+def generate_tex_from_data(result_filename, result_data):
     scheme = filename_to_scheme(result_filename)
 
     an_expr, an_tex, bn_expr, bn_tex = match_result(result_data, scheme)
@@ -242,8 +239,13 @@ def generate_tex(result_filename):
     tex = TEX_TEMPLATE.replace('RHSEquation', rhs_tex)
     tex = tex.replace('LHSEquation', lhs_tex)
     print(tex)
-    return tex
+    return [tex,]
+
+def generate_tex(result_filename):
+    with open(result_filename, "r") as result_file:
+        result_data = json.load(result_file)[0]
     
+    return generate_tex_from_data(result_filename, result_data)
 
 if __name__ == "__main__":
     from argparse import ArgumentParser
