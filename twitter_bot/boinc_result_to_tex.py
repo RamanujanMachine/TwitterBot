@@ -184,8 +184,8 @@ def match_result(result_data, scheme):
             gcd * bn_matched, f'({gcd}) \\cdot ({sympy.latex(bn_matched)})'
 
     # expansion :(
-    return an_expr, f'({gcd}) \\cdot ({(an_expr/gcd).simplify()})', \
-        bn_expr, f'({gcd}) \\cdot ({(bn_expr/gcd).simplify()})'
+    return an_expr, f'({gcd}) \\cdot ({sympy.latex((an_expr/gcd).simplify())})', \
+        bn_expr, f'({gcd}) \\cdot ({sympy.latex((bn_expr/gcd).simplify())})'
 
 
 def create_rhs_tex(an_expr, an_tex, bn_expr, bn_tex):

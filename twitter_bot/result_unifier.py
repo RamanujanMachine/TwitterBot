@@ -36,7 +36,7 @@ for result_fn_on_server in current_data:
         result_data = json.loads(result_data)[0]
         tex = generate_tex_from_data(result_fn_on_server, result_data)[0]
         tex = tex.split('$')[1]
-        tex = '\n$$' + tex + '$$\n'
+        tex = '\n$$ \\huge' + tex + '$$\n'
         new_results[result_fn_on_server] = {
             'res_data': result_data,
             'tex': tex
@@ -47,15 +47,13 @@ for result_fn_on_server in current_data:
         print(result_fn_on_server)
         print(f'Error received:\n{e}')
 
-import ipdb
-ipdb.set_trace()
 if len(new_results) == 0:
     print('No new results')
     exit()
 
-added_tex = f'\n\n#{datetime.now().strftime("%d/%m/%y")}\n'
+added_tex = f'\n\n# {datetime.now().strftime("%d/%m/%y")}\n\n'
 for res in new_results:
-    added_tex += f'##{res}\n{new_results[res]["tex"]}'
+    added_tex += f'## {res}\n{new_results[res]["tex"]}\n'
     previous_data.append([
         new_results[res]['res_data'][0],
         new_results[res]['res_data'][1],
@@ -64,7 +62,7 @@ for res in new_results:
         ])
 
 with open("all_boinc_results.json", "w") as result_file:
-    json.dump(previous_data, result_file)
+    json.dump(previous_data, result_file, indent=2)
 
 with open("all_results.md", "a") as results_md:
     results_md.write(added_tex)
