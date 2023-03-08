@@ -1,23 +1,26 @@
 
 
-#08/03/23
-##RNM_DEG2_2ROOTS_a_2_b_-1_-1_49987
+# 08/03/23
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-1_49987
 
 $$ 0.83190737...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -4 }
         { 36 + \cfrac{ -2304 }
-            { \ddots + \cfrac{ (n^2 + 2 \cdot n + 1) \cdot (-n^8) }
-                { (n^2 + 2 \cdot n + 1) \cdot (2 \cdot n^3 + 3 \cdot n^2 + 3 \cdot n + 1) } } }
+            { \ddots + \cfrac{ (n**2 + 2*n + 1) \cdot (-n**8) }
+                { (n**2 + 2*n + 1) \cdot (2*n**3 + 3*n**2 + 3*n + 1) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-1_50012
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-1_50012
 
 $$ 1.90403511...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -4 }
         { 50 + \cfrac{ -2304 }
-            { \ddots + \cfrac{ (n + 1) \cdot (n^8 \cdot (-n - 1)) }
-                { (n + 1) \cdot (2 \cdot n^4 + 5 \cdot n^3 + 9 \cdot n^2 + 7 \cdot n + 2) } } }
+            { \ddots + \cfrac{ (n + 1) \cdot (n**8*(-n - 1)) }
+                { (n + 1) \cdot (2*n**4 + 5*n**3 + 9*n**2 + 7*n + 2) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-1_50052
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-1_50052
 
 $$ 3.94039501...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -4 }
@@ -25,47 +28,53 @@ $$ 3.94039501...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 1\right)^{2} }
                 { n^{5} + \left(n + 1\right)^{3} \left(n + 2\right)^{2} } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-1_50053
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-1_50053
 
 $$ 4.94910089...=\displaystyle\lim _{n\to\infty} 
     5 + \cfrac{ -4 }
         { 84 + \cfrac{ -2304 }
-            { \ddots + \cfrac{ (n^2 + 2 \cdot n + 1) \cdot (-n^8) }
-                { (n^2 + 2 \cdot n + 1) \cdot (2 \cdot n^3 + 3 \cdot n^2 + 11 \cdot n + 5) } } }
+            { \ddots + \cfrac{ (n**2 + 2*n + 1) \cdot (-n**8) }
+                { (n**2 + 2*n + 1) \cdot (2*n**3 + 3*n**2 + 11*n + 5) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-2_50862
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-2_50862
 
 $$ 0.702508...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -6 }
         { 38 + \cfrac{ -3072 }
-            { \ddots + \cfrac{ (n + 1) \cdot (n^8 \cdot (-n - 2)) }
-                { (n + 1) \cdot (2 \cdot n^4 + 6 \cdot n^3 + 6 \cdot n^2 + 4 \cdot n + 1) } } }
+            { \ddots + \cfrac{ (n + 1) \cdot (n**8*(-n - 2)) }
+                { (n + 1) \cdot (2*n**4 + 6*n**3 + 6*n**2 + 4*n + 1) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-2_50879
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-2_50879
 
 $$ 1.84787680...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -6 }
         { 51 + \cfrac{ -3072 }
-            { \ddots + \cfrac{ (n + 2) \cdot (n^8 \cdot (-n - 1)) }
-                { (n + 2) \cdot (2 \cdot n^4 + 4 \cdot n^3 + 6 \cdot n^2 + 4 \cdot n + 1) } } }
+            { \ddots + \cfrac{ (n + 2) \cdot (n**8*(-n - 1)) }
+                { (n + 2) \cdot (2*n**4 + 4*n**3 + 6*n**2 + 4*n + 1) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-2_50911
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-2_50911
 
 $$ 2.89542453...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -6 }
         { 66 + \cfrac{ -3072 }
-            { \ddots + \cfrac{ (n + 1) \cdot (n^8 \cdot (-n - 2)) }
-                { (n + 1) \cdot (2 \cdot n^4 + 6 \cdot n^3 + 12 \cdot n^2 + 10 \cdot n + 3) } } }
+            { \ddots + \cfrac{ (n + 1) \cdot (n**8*(-n - 2)) }
+                { (n + 1) \cdot (2*n**4 + 6*n**3 + 12*n**2 + 10*n + 3) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-2_50912
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-2_50912
 
 $$ 5.91820159...=\displaystyle\lim _{n\to\infty} 
     6 + \cfrac{ -6 }
         { 81 + \cfrac{ -3072 }
-            { \ddots + \cfrac{ (n + 2) \cdot (n^8 \cdot (-n - 1)) }
-                { (n + 2) \cdot (2 \cdot n^4 + 4 \cdot n^3 + 10 \cdot n^2 + 8 \cdot n + 3) } } }
+            { \ddots + \cfrac{ (n + 2) \cdot (n**8*(-n - 1)) }
+                { (n + 2) \cdot (2*n**4 + 4*n**3 + 10*n**2 + 8*n + 3) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-2_50960
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-2_50960
 
 $$ 5.93393573...=\displaystyle\lim _{n\to\infty} 
     6 + \cfrac{ -6 }
@@ -73,15 +82,17 @@ $$ 5.93393573...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 1\right) \left(n + 2\right) }
                 { n^{5} + \left(n + 1\right)^{3} \left(n + 2\right) \left(n + 3\right) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-3_51737
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-3_51737
 
 $$ 0.33...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -8 }
         { 40 + \cfrac{ -3840 }
-            { \ddots + \cfrac{ (n + 1) \cdot (n^8 \cdot (-n - 3)) }
-                { (n + 1) \cdot (2 \cdot n^4 + 7 \cdot n^3 + 6 \cdot n^2 + 4 \cdot n + 1) } } }
+            { \ddots + \cfrac{ (n + 1) \cdot (n**8*(-n - 3)) }
+                { (n + 1) \cdot (2*n**4 + 7*n**3 + 6*n**2 + 4*n + 1) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-3_51746
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-3_51746
 
 $$ 1.78215878...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -8 }
@@ -89,15 +100,17 @@ $$ 1.78215878...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 1\right) \left(n + 3\right) }
                 { n^{4} \left(n + 3\right) + \left(n + 1\right)^{4} \left(n + 2\right) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-3_51811
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-3_51811
 
 $$ 3.89070068...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -8 }
         { 82 + \cfrac{ -3840 }
-            { \ddots + \cfrac{ (n + 1) \cdot (n^8 \cdot (-n - 3)) }
-                { (n + 1) \cdot (2 \cdot n^4 + 7 \cdot n^3 + 15 \cdot n^2 + 13 \cdot n + 4) } } }
+            { \ddots + \cfrac{ (n + 1) \cdot (n**8*(-n - 3)) }
+                { (n + 1) \cdot (2*n**4 + 7*n**3 + 15*n**2 + 13*n + 4) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-3_51868
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-3_51868
 
 $$ 7.93021696...=\displaystyle\lim _{n\to\infty} 
     8 + \cfrac{ -8 }
@@ -105,7 +118,8 @@ $$ 7.93021696...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 1\right) \left(n + 3\right) }
                 { n^{5} + \left(n + 1\right)^{3} \left(n + 2\right) \left(n + 4\right) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-4_52613
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-4_52613
 
 $$ 1.69622...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -10 }
@@ -113,15 +127,17 @@ $$ 1.69622...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 1\right) \left(n + 4\right) }
                 { n^{4} \left(n + 4\right) + \left(n + 1\right)^{4} \left(n + 2\right) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-1_-4_52710
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-1_-4_52710
 
 $$ 4.88773461...=\displaystyle\lim _{n\to\infty} 
     5 + \cfrac{ -10 }
         { 98 + \cfrac{ -4608 }
-            { \ddots + \cfrac{ (n + 1) \cdot (n^8 \cdot (-n - 4)) }
-                { (n + 1) \cdot (2 \cdot n^4 + 8 \cdot n^3 + 18 \cdot n^2 + 16 \cdot n + 5) } } }
+            { \ddots + \cfrac{ (n + 1) \cdot (n**8*(-n - 4)) }
+                { (n + 1) \cdot (2*n**4 + 8*n**3 + 18*n**2 + 16*n + 5) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-2_-2_51745
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-2_-2_51745
 
 $$ 0.267...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -9 }
@@ -129,7 +145,8 @@ $$ 0.267...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 2\right)^{2} }
                 { n^{3} \left(n + 2\right)^{2} + \left(n + 1\right)^{5} } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-2_-2_51778
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-2_-2_51778
 
 $$ 2.83676556...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -9 }
@@ -137,7 +154,8 @@ $$ 2.83676556...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 2\right)^{2} }
                 { n^{4} \left(n + 2\right) + \left(n + 1\right)^{4} \left(n + 3\right) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-2_-2_51876
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-2_-2_51876
 
 $$ 8.92652950...=\displaystyle\lim _{n\to\infty} 
     9 + \cfrac{ -9 }
@@ -145,15 +163,17 @@ $$ 8.92652950...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 2\right)^{2} }
                 { n^{5} + \left(n + 1\right)^{3} \left(n + 3\right)^{2} } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-2_-3_52645
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-2_-3_52645
 
 $$ 2.77181520...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -12 }
         { 68 + \cfrac{ -5120 }
-            { \ddots + \cfrac{ (n + 3) \cdot (n^8 \cdot (-n - 2)) }
-                { (n + 3) \cdot (2 \cdot n^4 + 4 \cdot n^3 + 6 \cdot n^2 + 4 \cdot n + 1) } } }
+            { \ddots + \cfrac{ (n + 3) \cdot (n**8*(-n - 2)) }
+                { (n + 3) \cdot (2*n**4 + 4*n**3 + 6*n**2 + 4*n + 1) } } }
      $$
-##RNM_DEG2_2ROOTS_a_2_b_-2_-3_52678
+
+\n<\n## \huge RNM_DEG2_2ROOTS_a_2_b_-2_-3_52678
 
 $$ 3.83089463...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -12 }
@@ -161,7 +181,8 @@ $$ 3.83089463...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} \left(n + 2\right) \left(n + 3\right) }
                 { n^{4} \left(n + 2\right) + \left(n + 1\right)^{4} \left(n + 4\right) } } }
      $$
-##RNM_PL5__a_2_b_-1_-6_53642
+
+\n<\n## \huge RNM_PL5__a_2_b_-1_-6_53642
 
 $$ 6.94310704...=\displaystyle\lim _{n\to\infty} 
     7 + \cfrac{ -7 }
@@ -169,7 +190,8 @@ $$ 6.94310704...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} - 6 n^{9} }
                 { 2 n^{5} + 11 n^{4} + 34 n^{3} + 46 n^{2} + 29 n + 7 } } }
      $$
-##RNM_PL5__a_2_b_-1_-8_55181
+
+\n<\n## \huge RNM_PL5__a_2_b_-1_-8_55181
 
 $$ 1.0e-12...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -9 }
@@ -177,7 +199,8 @@ $$ 1.0e-12...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} - 8 n^{9} }
                 { 2 n^{5} + 13 n^{4} + 10 n^{3} + 10 n^{2} + 5 n + 1 } } }
      $$
-##RNM_SingleHalfRoota_3_noexp__53560
+
+\n<\n## \huge RNM_SingleHalfRoota_3_noexp__53560
 
 $$ 2.96064240...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -3 }
@@ -185,7 +208,8 @@ $$ 2.96064240...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{9} \cdot \left(2 n + 1\right) }
                 { n^{5} + 2 \left(n + 1\right)^{4} \left(n + \frac{3}{2}\right) } } }
      $$
-##RNM_SingleHalfRoota_4_exp4__53528
+
+\n<\n## \huge RNM_SingleHalfRoota_4_exp4__53528
 
 $$ 1.88980595...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -6 }
@@ -193,7 +217,8 @@ $$ 1.88980595...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{9} \cdot \left(4 n + 2\right) }
                 { 2 n^{4} \left(n + \frac{1}{2}\right) + 2 \left(n + 1\right)^{5} } } }
      $$
-##RNM_SingleHalfRoota_4_exp4__53560
+
+\n<\n## \huge RNM_SingleHalfRoota_4_exp4__53560
 
 $$ 2.91624315...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -6 }
@@ -201,7 +226,8 @@ $$ 2.91624315...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{9} \cdot \left(4 n + 2\right) }
                 { 2 n^{5} + 2 \left(n + 1\right)^{4} \left(n + \frac{3}{2}\right) } } }
      $$
-##RNM_SingleHalfRoota_5_exp4__49979
+
+\n<\n## \huge RNM_SingleHalfRoota_5_exp4__49979
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -6 }
@@ -209,7 +235,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{9} \cdot \left(4 n + 2\right) }
                 { 4 n^{4} \left(n + \frac{1}{2}\right) + \left(n + 1\right)^{5} } } }
      $$
-##RNM_general_25_12_a2_b-1_2211
+
+\n<\n## \huge RNM_general_25_12_a2_b-1_2211
 
 $$ 0.83190737...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -1 }
@@ -217,7 +244,8 @@ $$ 0.83190737...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{6} }
                 { n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a2_b-1_2212
+
+\n<\n## \huge RNM_general_25_12_a2_b-1_2212
 
 $$ 39.9920457...=\displaystyle\lim _{n\to\infty} 
     40 + \cfrac{ -1 }
@@ -225,7 +253,8 @@ $$ 39.9920457...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{6} }
                 { 2 n^{3} + 3 n^{2} + 81 n + 40 } } }
      $$
-##RNM_general_25_12_a2_b-1_2213
+
+\n<\n## \huge RNM_general_25_12_a2_b-1_2213
 
 $$ 84.9961665...=\displaystyle\lim _{n\to\infty} 
     85 + \cfrac{ -1 }
@@ -233,7 +262,8 @@ $$ 84.9961665...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{6} }
                 { 2 n^{3} + 3 n^{2} + 171 n + 85 } } }
      $$
-##RNM_general_25_12_a2_b-1_2214
+
+\n<\n## \huge RNM_general_25_12_a2_b-1_2214
 
 $$ 112.997100...=\displaystyle\lim _{n\to\infty} 
     113 + \cfrac{ -1 }
@@ -241,7 +271,8 @@ $$ 112.997100...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{6} }
                 { 2 n^{3} + 3 n^{2} + 227 n + 113 } } }
      $$
-##RNM_general_25_12_a3_b-2_2211
+
+\n<\n## \huge RNM_general_25_12_a3_b-2_2211
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -2 }
@@ -249,7 +280,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 2 n^{6} }
                 { 2 n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a3_b-2_2235
+
+\n<\n## \huge RNM_general_25_12_a3_b-2_2235
 
 $$ 1.86145837...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -2 }
@@ -257,7 +289,8 @@ $$ 1.86145837...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 2 n^{6} }
                 { n^{3} + 2 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a4_b-3_2211
+
+\n<\n## \huge RNM_general_25_12_a4_b-3_2211
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -3 }
@@ -265,7 +298,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 3 n^{6} }
                 { 3 n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a4_b-3_2259
+
+\n<\n## \huge RNM_general_25_12_a4_b-3_2259
 
 $$ 2.86674348...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -3 }
@@ -273,7 +307,8 @@ $$ 2.86674348...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 3 n^{6} }
                 { n^{3} + 3 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a4_b-4_2235
+
+\n<\n## \huge RNM_general_25_12_a4_b-4_2235
 
 $$ 0.304...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -4 }
@@ -281,7 +316,8 @@ $$ 0.304...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{6} }
                 { 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_general_25_12_a4_b-4_2236
+
+\n<\n## \huge RNM_general_25_12_a4_b-4_2236
 
 $$ 36.9671924...=\displaystyle\lim _{n\to\infty} 
     37 + \cfrac{ -4 }
@@ -289,7 +325,8 @@ $$ 36.9671924...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{6} }
                 { 4 n^{3} + 6 n^{2} + 76 n + 37 } } }
      $$
-##RNM_general_25_12_a4_b-4_2237
+
+\n<\n## \huge RNM_general_25_12_a4_b-4_2237
 
 $$ 64.9806132...=\displaystyle\lim _{n\to\infty} 
     65 + \cfrac{ -4 }
@@ -297,7 +334,8 @@ $$ 64.9806132...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{6} }
                 { 4 n^{3} + 6 n^{2} + 132 n + 65 } } }
      $$
-##RNM_general_25_12_a4_b-4_2238
+
+\n<\n## \huge RNM_general_25_12_a4_b-4_2238
 
 $$ 100.987283...=\displaystyle\lim _{n\to\infty} 
     101 + \cfrac{ -4 }
@@ -305,7 +343,8 @@ $$ 100.987283...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{6} }
                 { 4 n^{3} + 6 n^{2} + 204 n + 101 } } }
      $$
-##RNM_general_25_12_a5_b-4_2211
+
+\n<\n## \huge RNM_general_25_12_a5_b-4_2211
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -4 }
@@ -313,7 +352,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{6} }
                 { 4 n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a5_b-4_2283
+
+\n<\n## \huge RNM_general_25_12_a5_b-4_2283
 
 $$ 3.86904975...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -4 }
@@ -321,7 +361,8 @@ $$ 3.86904975...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{6} }
                 { n^{3} + 4 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a5_b-6_2259
+
+\n<\n## \huge RNM_general_25_12_a5_b-6_2259
 
 $$ 2.70980442...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -6 }
@@ -329,7 +370,8 @@ $$ 2.70980442...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 6 n^{6} }
                 { 2 n^{3} + 3 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a6_b-1_2259
+
+\n<\n## \huge RNM_general_25_12_a6_b-1_2259
 
 $$ 0.95075128...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -1 }
@@ -337,7 +379,8 @@ $$ 0.95075128...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{6} }
                 { 6 n^{3} + 9 n^{2} + 5 n + 1 } } }
      $$
-##RNM_general_25_12_a6_b-5_2211
+
+\n<\n## \huge RNM_general_25_12_a6_b-5_2211
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -5 }
@@ -345,7 +388,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 5 n^{6} }
                 { 5 n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a6_b-5_2307
+
+\n<\n## \huge RNM_general_25_12_a6_b-5_2307
 
 $$ 4.87034660...=\displaystyle\lim _{n\to\infty} 
     5 + \cfrac{ -5 }
@@ -353,7 +397,8 @@ $$ 4.87034660...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 5 n^{6} }
                 { n^{3} + 5 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a6_b-8_2235
+
+\n<\n## \huge RNM_general_25_12_a6_b-8_2235
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -8 }
@@ -361,7 +406,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ (2) \cdot (- 4 n^{6}) }
                 { (2) \cdot (2 n^{3} + \left(n + 1\right)^{3}) } } }
      $$
-##RNM_general_25_12_a6_b-8_2283
+
+\n<\n## \huge RNM_general_25_12_a6_b-8_2283
 
 $$ 3.72291675...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -8 }
@@ -369,7 +415,8 @@ $$ 3.72291675...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ (2) \cdot (- 4 n^{6}) }
                 { (2) \cdot (n^{3} + 2 \left(n + 1\right)^{3}) } } }
      $$
-##RNM_general_25_12_a6_b-9_2259
+
+\n<\n## \huge RNM_general_25_12_a6_b-9_2259
 
 $$ 2.49572212...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -9 }
@@ -377,7 +424,8 @@ $$ 2.49572212...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ (3) \cdot (- 3 n^{6}) }
                 { (3) \cdot (n^{3} + \left(n + 1\right)^{3}) } } }
      $$
-##RNM_general_25_12_a6_b-9_2260
+
+\n<\n## \huge RNM_general_25_12_a6_b-9_2260
 
 $$ 38.9322679...=\displaystyle\lim _{n\to\infty} 
     39 + \cfrac{ -9 }
@@ -385,7 +433,8 @@ $$ 38.9322679...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ (3) \cdot (- 3 n^{6}) }
                 { (3) \cdot (2 n^{3} + 3 n^{2} + 27 n + 13) } } }
      $$
-##RNM_general_25_12_a6_b-9_2261
+
+\n<\n## \huge RNM_general_25_12_a6_b-9_2261
 
 $$ 74.9627695...=\displaystyle\lim _{n\to\infty} 
     75 + \cfrac{ -9 }
@@ -393,7 +442,8 @@ $$ 74.9627695...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ (3) \cdot (- 3 n^{6}) }
                 { (3) \cdot (2 n^{3} + 3 n^{2} + 51 n + 25) } } }
      $$
-##RNM_general_25_12_a6_b-9_2262
+
+\n<\n## \huge RNM_general_25_12_a6_b-9_2262
 
 $$ 114.975146...=\displaystyle\lim _{n\to\infty} 
     115 + \cfrac{ -9 }
@@ -401,7 +451,8 @@ $$ 114.975146...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{6} }
                 { 6 n^{3} + 9 n^{2} + 233 n + 115 } } }
      $$
-##RNM_general_25_12_a7_b-6_2211
+
+\n<\n## \huge RNM_general_25_12_a7_b-6_2211
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -6 }
@@ -409,7 +460,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 6 n^{6} }
                 { 6 n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a7_b-6_2331
+
+\n<\n## \huge RNM_general_25_12_a7_b-6_2331
 
 $$ 5.87117861...=\displaystyle\lim _{n\to\infty} 
     6 + \cfrac{ -6 }
@@ -417,7 +469,8 @@ $$ 5.87117861...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 6 n^{6} }
                 { n^{3} + 6 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a8_b-7_2211
+
+\n<\n## \huge RNM_general_25_12_a8_b-7_2211
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -7 }
@@ -425,7 +478,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 7 n^{6} }
                 { 7 n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a8_b-7_2355
+
+\n<\n## \huge RNM_general_25_12_a8_b-7_2355
 
 $$ 6.87175795...=\displaystyle\lim _{n\to\infty} 
     7 + \cfrac{ -7 }
@@ -433,7 +487,8 @@ $$ 6.87175795...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 7 n^{6} }
                 { n^{3} + 7 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a9_b-8_2211
+
+\n<\n## \huge RNM_general_25_12_a9_b-8_2211
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -8 }
@@ -441,7 +496,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 8 n^{6} }
                 { 8 n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a9_b-8_2379
+
+\n<\n## \huge RNM_general_25_12_a9_b-8_2379
 
 $$ 7.87218462...=\displaystyle\lim _{n\to\infty} 
     8 + \cfrac{ -8 }
@@ -449,7 +505,8 @@ $$ 7.87218462...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 8 n^{6} }
                 { n^{3} + 8 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a9_b-8_2435
+
+\n<\n## \huge RNM_general_25_12_a9_b-8_2435
 
 $$ 11.9048503...=\displaystyle\lim _{n\to\infty} 
     12 + \cfrac{ -8 }
@@ -457,7 +514,8 @@ $$ 11.9048503...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 8 n^{6} }
                 { 9 n^{3} + 31 n^{2} + 34 n + 12 } } }
      $$
-##RNM_general_25_12_a10_b-9_2211
+
+\n<\n## \huge RNM_general_25_12_a10_b-9_2211
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -9 }
@@ -465,7 +523,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{6} }
                 { 9 n^{3} + \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a10_b-9_2403
+
+\n<\n## \huge RNM_general_25_12_a10_b-9_2403
 
 $$ 8.87251199...=\displaystyle\lim _{n\to\infty} 
     9 + \cfrac{ -9 }
@@ -473,7 +532,8 @@ $$ 8.87251199...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{6} }
                 { n^{3} + 9 \left(n + 1\right)^{3} } } }
      $$
-##RNM_general_25_12_a34_b-1_2595
+
+\n<\n## \huge RNM_general_25_12_a34_b-1_2595
 
 $$ 4.99144423...=\displaystyle\lim _{n\to\infty} 
     5 + \cfrac{ -1 }
@@ -481,7 +541,8 @@ $$ 4.99144423...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{6} }
                 { 34 n^{3} + 51 n^{2} + 27 n + 5 } } }
      $$
-##RNM_zeta4_doms__a_3_b_-2_14162
+
+\n<\n## \huge RNM_zeta4_doms__a_3_b_-2_14162
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -2 }
@@ -489,7 +550,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 2 n^{8} }
                 { 3 n^{4} + 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_doms__a_3_b_-2_14705
+
+\n<\n## \huge RNM_zeta4_doms__a_3_b_-2_14705
 
 $$ 1.93244533...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -2 }
@@ -497,7 +559,8 @@ $$ 1.93244533...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 2 n^{8} }
                 { 3 n^{4} + 8 n^{3} + 12 n^{2} + 8 n + 2 } } }
      $$
-##RNM_zeta4_doms__a_4_b_-3_14162
+
+\n<\n## \huge RNM_zeta4_doms__a_4_b_-3_14162
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -3 }
@@ -505,7 +568,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 3 n^{8} }
                 { 4 n^{4} + 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_doms__a_4_b_-3_15248
+
+\n<\n## \huge RNM_zeta4_doms__a_4_b_-3_15248
 
 $$ 2.93434866...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -3 }
@@ -513,7 +577,8 @@ $$ 2.93434866...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 3 n^{8} }
                 { 4 n^{4} + 12 n^{3} + 18 n^{2} + 12 n + 3 } } }
      $$
-##RNM_zeta4_doms__a_4_b_-4_14705
+
+\n<\n## \huge RNM_zeta4_doms__a_4_b_-4_14705
 
 $$ 1.84787680...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -4 }
@@ -521,7 +586,8 @@ $$ 1.84787680...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 4 n^{4} + 8 n^{3} + 12 n^{2} + 8 n + 2 } } }
      $$
-##RNM_zeta4_doms__a_4_b_-4_14709
+
+\n<\n## \huge RNM_zeta4_doms__a_4_b_-4_14709
 
 $$ 5.91820159...=\displaystyle\lim _{n\to\infty} 
     6 + \cfrac{ -4 }
@@ -529,7 +595,8 @@ $$ 5.91820159...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 4 n^{4} + 8 n^{3} + 20 n^{2} + 16 n + 6 } } }
      $$
-##RNM_zeta4_doms__a_5_b_-4_14162
+
+\n<\n## \huge RNM_zeta4_doms__a_5_b_-4_14162
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -4 }
@@ -537,7 +604,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 5 n^{4} + 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_doms__a_5_b_-4_15791
+
+\n<\n## \huge RNM_zeta4_doms__a_5_b_-4_15791
 
 $$ 3.93520773...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -4 }
@@ -545,7 +613,8 @@ $$ 3.93520773...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 5 n^{4} + 16 n^{3} + 24 n^{2} + 16 n + 4 } } }
      $$
-##RNM_zeta4_doms__a_10_b_-9_14162
+
+\n<\n## \huge RNM_zeta4_doms__a_10_b_-9_14162
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -9 }
@@ -553,7 +622,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 10 n^{4} + 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_doms__a_10_b_-9_18517
+
+\n<\n## \huge RNM_zeta4_doms__a_10_b_-9_18517
 
 $$ 8.93652851...=\displaystyle\lim _{n\to\infty} 
     9 + \cfrac{ -9 }
@@ -561,7 +631,8 @@ $$ 8.93652851...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 10 n^{4} + 36 n^{3} + 54 n^{2} + 36 n + 9 } } }
      $$
-##RNM_zeta4_doms__lead_a_2_14162
+
+\n<\n## \huge RNM_zeta4_doms__lead_a_2_14162
 
 $$ 0.92393840...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -1 }
@@ -569,7 +640,8 @@ $$ 0.92393840...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} }
                 { 2 n^{4} + 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_doms__lead_a_2_14164
+
+\n<\n## \huge RNM_zeta4_doms__lead_a_2_14164
 
 $$ 2.95910079...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -1 }
@@ -577,7 +649,8 @@ $$ 2.95910079...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} }
                 { 2 n^{4} + 4 n^{3} + 10 n^{2} + 8 n + 3 } } }
      $$
-##RNM_zeta4_doms__lead_a_4_14705
+
+\n<\n## \huge RNM_zeta4_doms__lead_a_4_14705
 
 $$ 1.84787680...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -4 }
@@ -585,7 +658,8 @@ $$ 1.84787680...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 4 n^{4} + 8 n^{3} + 12 n^{2} + 8 n + 2 } } }
      $$
-##RNM_zeta4_doms__lead_a_4_14709
+
+\n<\n## \huge RNM_zeta4_doms__lead_a_4_14709
 
 $$ 5.91820159...=\displaystyle\lim _{n\to\infty} 
     6 + \cfrac{ -4 }
@@ -593,7 +667,8 @@ $$ 5.91820159...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 4 n^{4} + 8 n^{3} + 20 n^{2} + 16 n + 6 } } }
      $$
-##RNM_zeta4_doms__lead_a_6_15248
+
+\n<\n## \huge RNM_zeta4_doms__lead_a_6_15248
 
 $$ 2.77181520...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -9 }
@@ -601,7 +676,8 @@ $$ 2.77181520...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 6 n^{4} + 12 n^{3} + 18 n^{2} + 12 n + 3 } } }
      $$
-##RNM_zeta4_doms__lead_a_6_15254
+
+\n<\n## \huge RNM_zeta4_doms__lead_a_6_15254
 
 $$ 8.87730239...=\displaystyle\lim _{n\to\infty} 
     9 + \cfrac{ -9 }
@@ -609,7 +685,8 @@ $$ 8.87730239...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 6 n^{4} + 12 n^{3} + 30 n^{2} + 24 n + 9 } } }
      $$
-##RNM_zeta4_doms__lead_a_8_15791
+
+\n<\n## \huge RNM_zeta4_doms__lead_a_8_15791
 
 $$ 3.69575361...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -16 }
@@ -617,7 +694,8 @@ $$ 3.69575361...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} }
                 { 8 n^{4} + 16 n^{3} + 24 n^{2} + 16 n + 4 } } }
      $$
-##RNM_zeta4_doms__lead_a_8_15803
+
+\n<\n## \huge RNM_zeta4_doms__lead_a_8_15803
 
 $$ 11.8364031...=\displaystyle\lim _{n\to\infty} 
     12 + \cfrac{ -16 }
@@ -625,7 +703,8 @@ $$ 11.8364031...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} }
                 { 8 n^{4} + 16 n^{3} + 40 n^{2} + 32 n + 12 } } }
      $$
-##RNM_zeta4_not_h1h2_230221_9_183041
+
+\n<\n## \huge RNM_zeta4_not_h1h2_230221_9_183041
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -10 }
@@ -633,7 +712,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} - n^{7} }
                 { 10 n^{4} + 5 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_not_h1h2_230221_9_199126
+
+\n<\n## \huge RNM_zeta4_not_h1h2_230221_9_199126
 
 $$ 2.77181520...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -9 }
@@ -641,7 +721,8 @@ $$ 2.77181520...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 6 n^{4} + 12 n^{3} + 18 n^{2} + 12 n + 3 } } }
      $$
-##RNM_zeta4_not_h1h2_230221_16_146825
+
+\n<\n## \huge RNM_zeta4_not_h1h2_230221_16_146825
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -16 }
@@ -649,7 +730,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} }
                 { 17 n^{4} - 11 n^{3} + 15 n^{2} + 7 n + 4 } } }
      $$
-##RNM_zeta4_not_h1h2_230221_16_194492
+
+\n<\n## \huge RNM_zeta4_not_h1h2_230221_16_194492
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -20 }
@@ -657,7 +739,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} - 4 n^{7} }
                 { 10 n^{4} + 10 n^{3} + 12 n^{2} + 8 n + 2 } } }
      $$
-##RNM_zeta4_not_h1h2_230221_16_245018
+
+\n<\n## \huge RNM_zeta4_not_h1h2_230221_16_245018
 
 $$ 7.87041547...=\displaystyle\lim _{n\to\infty} 
     8 + \cfrac{ -16 }
@@ -665,7 +748,8 @@ $$ 7.87041547...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} }
                 { 10 n^{4} + 32 n^{3} + 48 n^{2} + 32 n + 8 } } }
      $$
-##RNM_zeta4_not_h1h2_230221_36_210577
+
+\n<\n## \huge RNM_zeta4_not_h1h2_230221_36_210577
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -40 }
@@ -673,7 +757,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 36 n^{8} - 4 n^{7} }
                 { 13 n^{4} + 17 n^{3} + 24 n^{2} + 16 n + 4 } } }
      $$
-##RNM_zeta4_not_h1h2_230221_100_210577
+
+\n<\n## \huge RNM_zeta4_not_h1h2_230221_100_210577
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -104 }
@@ -681,7 +766,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 100 n^{8} - 4 n^{7} }
                 { 29 n^{4} + 17 n^{3} + 24 n^{2} + 16 n + 4 } } }
      $$
-##RNM_zeta4_not_h1h2_b-1_20578
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-1_20578
 
 $$ 0.92393840...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -1 }
@@ -689,7 +775,8 @@ $$ 0.92393840...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} }
                 { 2 n^{4} + 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_not_h1h2_b-1_20586
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-1_20586
 
 $$ 2.95910079...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -1 }
@@ -697,7 +784,8 @@ $$ 2.95910079...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{8} }
                 { 2 n^{4} + 4 n^{3} + 10 n^{2} + 8 n + 3 } } }
      $$
-##RNM_zeta4_not_h1h2_b-4_20578
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-4_20578
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -4 }
@@ -705,7 +793,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 5 n^{4} + 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_not_h1h2_b-4_21622
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-4_21622
 
 $$ 1.84787680...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -4 }
@@ -713,7 +802,8 @@ $$ 1.84787680...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 4 n^{4} + 8 n^{3} + 12 n^{2} + 8 n + 2 } } }
      $$
-##RNM_zeta4_not_h1h2_b-4_21638
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-4_21638
 
 $$ 5.91820159...=\displaystyle\lim _{n\to\infty} 
     6 + \cfrac{ -4 }
@@ -721,7 +811,8 @@ $$ 5.91820159...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 4 n^{4} + 8 n^{3} + 20 n^{2} + 16 n + 6 } } }
      $$
-##RNM_zeta4_not_h1h2_b-4_23710
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-4_23710
 
 $$ 3.93520773...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -4 }
@@ -729,7 +820,8 @@ $$ 3.93520773...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 4 n^{8} }
                 { 5 n^{4} + 16 n^{3} + 24 n^{2} + 16 n + 4 } } }
      $$
-##RNM_zeta4_not_h1h2_b-9_20578
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-9_20578
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -9 }
@@ -737,7 +829,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 10 n^{4} + 4 n^{3} + 6 n^{2} + 4 n + 1 } } }
      $$
-##RNM_zeta4_not_h1h2_b-9_22666
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-9_22666
 
 $$ 2.77181520...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -9 }
@@ -745,7 +838,8 @@ $$ 2.77181520...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 6 n^{4} + 12 n^{3} + 18 n^{2} + 12 n + 3 } } }
      $$
-##RNM_zeta4_not_h1h2_b-9_22690
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-9_22690
 
 $$ 8.87730239...=\displaystyle\lim _{n\to\infty} 
     9 + \cfrac{ -9 }
@@ -753,7 +847,8 @@ $$ 8.87730239...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 6 n^{4} + 12 n^{3} + 30 n^{2} + 24 n + 9 } } }
      $$
-##RNM_zeta4_not_h1h2_b-9_28907
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-9_28907
 
 $$ 8.93652851...=\displaystyle\lim _{n\to\infty} 
     9 + \cfrac{ -9 }
@@ -761,7 +856,8 @@ $$ 8.93652851...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 9 n^{8} }
                 { 10 n^{4} + 36 n^{3} + 54 n^{2} + 36 n + 9 } } }
      $$
-##RNM_zeta4_not_h1h2_b-16_21622
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-16_21622
 
 $$ 0.0...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -16 }
@@ -769,7 +865,8 @@ $$ 0.0...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} }
                 { 10 n^{4} + 8 n^{3} + 12 n^{2} + 8 n + 2 } } }
      $$
-##RNM_zeta4_not_h1h2_b-16_23710
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-16_23710
 
 $$ 3.69575361...=\displaystyle\lim _{n\to\infty} 
     4 + \cfrac{ -16 }
@@ -777,7 +874,8 @@ $$ 3.69575361...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} }
                 { 8 n^{4} + 16 n^{3} + 24 n^{2} + 16 n + 4 } } }
      $$
-##RNM_zeta4_not_h1h2_b-16_23733
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-16_23733
 
 $$ 11.8364031...=\displaystyle\lim _{n\to\infty} 
     12 + \cfrac{ -16 }
@@ -785,7 +883,8 @@ $$ 11.8364031...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} }
                 { 8 n^{4} + 16 n^{3} + 40 n^{2} + 32 n + 12 } } }
      $$
-##RNM_zeta4_not_h1h2_b-16_27869
+
+\n<\n## \huge RNM_zeta4_not_h1h2_b-16_27869
 
 $$ 7.87041547...=\displaystyle\lim _{n\to\infty} 
     8 + \cfrac{ -16 }
@@ -793,7 +892,8 @@ $$ 7.87041547...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 16 n^{8} }
                 { 10 n^{4} + 32 n^{3} + 48 n^{2} + 32 n + 8 } } }
      $$
-##RNM_zeta5_3__099528
+
+\n<\n## \huge RNM_zeta5_3__099528
 
 $$ 1.2042...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -64 }
@@ -801,7 +901,8 @@ $$ 1.2042...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { 8 n^{5} - 15 n^{3} + 18 n + 8 \left(n + 1\right)^{5} - 15 \left(n + 1\right)^{3} + 9 } } }
      $$
-##RNM_zeta5_3__099729
+
+\n<\n## \huge RNM_zeta5_3__099729
 
 $$ 2.45174606...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -64 }
@@ -809,7 +910,8 @@ $$ 2.45174606...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { 8 n^{5} - 12 n^{3} + 14 n + 8 \left(n + 1\right)^{5} - 12 \left(n + 1\right)^{3} + 7 } } }
      $$
-##RNM_zeta5_3__100533
+
+\n<\n## \huge RNM_zeta5_3__100533
 
 $$ 0.96438734...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -1 }
@@ -817,7 +919,8 @@ $$ 0.96438734...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { n^{5} + \left(n + 1\right)^{5} } } }
      $$
-##RNM_zeta5_3__100935
+
+\n<\n## \huge RNM_zeta5_3__100935
 
 $$ 2.98622586...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -1 }
@@ -825,7 +928,8 @@ $$ 2.98622586...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { n^{5} + 6 n^{3} - 8 n + \left(n + 1\right)^{5} + 6 \left(n + 1\right)^{3} - 4 } } }
      $$
-##RNM_zeta5_3__101605
+
+\n<\n## \huge RNM_zeta5_3__101605
 
 $$ 12.9938915...=\displaystyle\lim _{n\to\infty} 
     13 + \cfrac{ -1 }
@@ -833,7 +937,8 @@ $$ 12.9938915...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { n^{5} + 16 n^{3} - 8 n + \left(n + 1\right)^{5} + 16 \left(n + 1\right)^{3} - 4 } } }
      $$
-##RNM_zeta5_3__101873
+
+\n<\n## \huge RNM_zeta5_3__101873
 
 $$ 22.8410085...=\displaystyle\lim _{n\to\infty} 
     23 + \cfrac{ -64 }
@@ -841,7 +946,8 @@ $$ 22.8410085...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { 8 n^{5} + 20 n^{3} - 10 n + 8 \left(n + 1\right)^{5} + 20 \left(n + 1\right)^{3} - 5 } } }
      $$
-##RNM_zeta5_131521
+
+\n<\n## \huge RNM_zeta5_131521
 
 $$ -22.841008...=\displaystyle\lim _{n\to\infty} 
     -23 + \cfrac{ -64 }
@@ -849,7 +955,8 @@ $$ -22.841008...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { - 8 n^{5} - 20 n^{3} + 10 n - 8 \left(n + 1\right)^{5} - 20 \left(n + 1\right)^{3} + 5 } } }
      $$
-##RNM_zeta5_132056
+
+\n<\n## \huge RNM_zeta5_132056
 
 $$ -12.993891...=\displaystyle\lim _{n\to\infty} 
     -13 + \cfrac{ -1 }
@@ -857,7 +964,8 @@ $$ -12.993891...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { - n^{5} - 16 n^{3} + 8 n - \left(n + 1\right)^{5} - 16 \left(n + 1\right)^{3} + 4 } } }
      $$
-##RNM_zeta5_132191
+
+\n<\n## \huge RNM_zeta5_132191
 
 $$ 1.2042...=\displaystyle\lim _{n\to\infty} 
     2 + \cfrac{ -64 }
@@ -865,7 +973,8 @@ $$ 1.2042...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { 8 n^{5} - 15 n^{3} + 18 n + 8 \left(n + 1\right)^{5} - 15 \left(n + 1\right)^{3} + 9 } } }
      $$
-##RNM_zeta5_132593
+
+\n<\n## \huge RNM_zeta5_132593
 
 $$ 2.45174606...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -64 }
@@ -873,7 +982,8 @@ $$ 2.45174606...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { 8 n^{5} - 12 n^{3} + 14 n + 8 \left(n + 1\right)^{5} - 12 \left(n + 1\right)^{3} + 7 } } }
      $$
-##RNM_zeta5_133396
+
+\n<\n## \huge RNM_zeta5_133396
 
 $$ -6.9881951...=\displaystyle\lim _{n\to\infty} 
     -7 + \cfrac{ -1 }
@@ -881,7 +991,8 @@ $$ -6.9881951...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { - n^{5} - 6 n^{3} - \left(n + 1\right)^{5} - 6 \left(n + 1\right)^{3} } } }
      $$
-##RNM_zeta5_134200
+
+\n<\n## \huge RNM_zeta5_134200
 
 $$ -0.9643873...=\displaystyle\lim _{n\to\infty} 
     -1 + \cfrac{ -1 }
@@ -889,7 +1000,8 @@ $$ -0.9643873...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { - n^{5} - \left(n + 1\right)^{5} } } }
      $$
-##RNM_zeta5_135004
+
+\n<\n## \huge RNM_zeta5_135004
 
 $$ 2.98622586...=\displaystyle\lim _{n\to\infty} 
     3 + \cfrac{ -1 }
@@ -897,7 +1009,8 @@ $$ 2.98622586...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { n^{5} + 6 n^{3} - 8 n + \left(n + 1\right)^{5} + 6 \left(n + 1\right)^{3} - 4 } } }
      $$
-##RNM_zeta5_135808
+
+\n<\n## \huge RNM_zeta5_135808
 
 $$ -2.4517460...=\displaystyle\lim _{n\to\infty} 
     -3 + \cfrac{ -64 }
@@ -905,7 +1018,8 @@ $$ -2.4517460...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { - 8 n^{5} + 12 n^{3} - 14 n - 8 \left(n + 1\right)^{5} + 12 \left(n + 1\right)^{3} - 7 } } }
      $$
-##RNM_zeta5_136210
+
+\n<\n## \huge RNM_zeta5_136210
 
 $$ -1.2042...=\displaystyle\lim _{n\to\infty} 
     -2 + \cfrac{ -64 }
@@ -913,7 +1027,8 @@ $$ -1.2042...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { - 8 n^{5} + 15 n^{3} - 18 n - 8 \left(n + 1\right)^{5} + 15 \left(n + 1\right)^{3} - 9 } } }
      $$
-##RNM_zeta5_136344
+
+\n<\n## \huge RNM_zeta5_136344
 
 $$ 12.9938915...=\displaystyle\lim _{n\to\infty} 
     13 + \cfrac{ -1 }
@@ -921,7 +1036,8 @@ $$ 12.9938915...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { n^{5} + 16 n^{3} - 8 n + \left(n + 1\right)^{5} + 16 \left(n + 1\right)^{3} - 4 } } }
      $$
-##RNM_zeta5_136880
+
+\n<\n## \huge RNM_zeta5_136880
 
 $$ 22.8410085...=\displaystyle\lim _{n\to\infty} 
     23 + \cfrac{ -64 }
@@ -929,7 +1045,8 @@ $$ 22.8410085...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - 64 n^{10} }
                 { 8 n^{5} + 20 n^{3} - 10 n + 8 \left(n + 1\right)^{5} + 20 \left(n + 1\right)^{3} - 5 } } }
      $$
-##RNM_zeta5_doms_a2_5_b-1_14974
+
+\n<\n## \huge RNM_zeta5_doms_a2_5_b-1_14974
 
 $$ 0.96438734...=\displaystyle\lim _{n\to\infty} 
     17 + \cfrac{ -1 }
@@ -937,7 +1054,8 @@ $$ 0.96438734...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { 2 n^{5} + 5 n^{3} + 20 n + 2 \left(n + 1\right)^{5} + 5 \left(n + 1\right)^{3} + 10 } } }
      $$
-##RNM_zeta5_doms_a2_5_b-1_16603
+
+\n<\n## \huge RNM_zeta5_doms_a2_5_b-1_16603
 
 $$ 2.98622586...=\displaystyle\lim _{n\to\infty} 
     29 + \cfrac{ -1 }
@@ -945,7 +1063,8 @@ $$ 2.98622586...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { 2 n^{5} + 5 n^{3} + 44 n + 2 \left(n + 1\right)^{5} + 5 \left(n + 1\right)^{3} + 22 } } }
      $$
-##RNM_zeta5_doms_a2_5_b-1_19331
+
+\n<\n## \huge RNM_zeta5_doms_a2_5_b-1_19331
 
 $$ 12.9938915...=\displaystyle\lim _{n\to\infty} 
     49 + \cfrac{ -1 }
@@ -953,3 +1072,4 @@ $$ 12.9938915...=\displaystyle\lim _{n\to\infty}
             { \ddots + \cfrac{ - n^{10} }
                 { 2 n^{5} + 5 n^{3} + 84 n + 2 \left(n + 1\right)^{5} + 5 \left(n + 1\right)^{3} + 42 } } }
      $$
+
