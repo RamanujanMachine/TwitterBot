@@ -180,12 +180,12 @@ def match_result(result_data, scheme):
         an_matched = match_expression(an_expr/gcd, JOB_NAME_TO_RESULT_SCHEMES[scheme]['an'])
         bn_matched = match_expression(bn_expr/gcd, JOB_NAME_TO_RESULT_SCHEMES[scheme]['bn'])
 
-        return gcd * an_matched, f'({gcd}) \\cdot ({sympy.latex(an_matched)})', \
-            gcd * bn_matched, f'({gcd}) \\cdot ({sympy.latex(bn_matched)})'
+        return gcd * an_matched, f'({sympy.latex(gcd)}) \\cdot ({sympy.latex(an_matched)})', \
+            gcd * bn_matched, f'({sympy.latex(gcd)}) \\cdot ({sympy.latex(bn_matched)})'
 
     # expansion :(
-    return an_expr, f'({gcd}) \\cdot ({sympy.latex((an_expr/gcd).simplify())})', \
-        bn_expr, f'({gcd}) \\cdot ({sympy.latex((bn_expr/gcd).simplify())})'
+    return an_expr, f'({sympy.latex(gcd)}) \\cdot ({sympy.latex((an_expr/gcd).simplify())})', \
+        bn_expr, f'({sympy.latex(gcd)}) \\cdot ({sympy.latex((bn_expr/gcd).simplify())})'
 
 
 def create_rhs_tex(an_expr, an_tex, bn_expr, bn_tex):

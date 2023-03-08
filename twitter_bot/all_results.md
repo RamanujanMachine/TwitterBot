@@ -7,8 +7,8 @@
 $$ \huge 0.83190737...=\displaystyle\lim _{n\to\infty} 
     1 + \cfrac{ -4 }
         { 36 + \cfrac{ -2304 }
-            { \ddots + \cfrac{ (n**2 + 2*n + 1) \cdot (- n^{8}) }
-                { (n**2 + 2*n + 1) \cdot (2 n^{3} + 3 n^{2} + 3 n + 1) } } }
+            { \ddots + \cfrac{ (n^{2} + 2 n + 1) \cdot (- n^{8}) }
+                { (n^{2} + 2 n + 1) \cdot (2 n^{3} + 3 n^{2} + 3 n + 1) } } }
      $$
 
 ## RNM_DEG2_2ROOTS_a_2_b_-1_-1_50012
@@ -34,8 +34,8 @@ $$ \huge 3.94039501...=\displaystyle\lim _{n\to\infty}
 $$ \huge 4.94910089...=\displaystyle\lim _{n\to\infty} 
     5 + \cfrac{ -4 }
         { 84 + \cfrac{ -2304 }
-            { \ddots + \cfrac{ (n**2 + 2*n + 1) \cdot (- n^{8}) }
-                { (n**2 + 2*n + 1) \cdot (2 n^{3} + 3 n^{2} + 11 n + 5) } } }
+            { \ddots + \cfrac{ (n^{2} + 2 n + 1) \cdot (- n^{8}) }
+                { (n^{2} + 2 n + 1) \cdot (2 n^{3} + 3 n^{2} + 11 n + 5) } } }
      $$
 
 ## RNM_DEG2_2ROOTS_a_2_b_-1_-2_50862
