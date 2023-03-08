@@ -44,7 +44,7 @@ for result_fn_on_server in current_data:
         
     except Exception as e:
         print('Error when processing result. Result details:')
-        print(result)
+        print(result_fn_on_server)
         print(f'Error received:\n{e}')
 
 import ipdb
